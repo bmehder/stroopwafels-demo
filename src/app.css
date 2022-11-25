@@ -1,0 +1,115 @@
+:root {
+  --dark: #8a2387;
+  --medium: #e94057;
+  --light: #f27121;
+  --black: #222;
+  /* --white: rgba(255, 255, 255, 0.8); */
+  --white: #eff0f4;
+  --shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  position: relative;
+  inset: 0;
+  background-color: var(--white);
+  color: #323232;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.dark {
+  background-color: #242424;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin-top: 1.5rem;
+  line-height: 1.5em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+ul,
+ol {
+  padding-left: 2rem;
+}
+
+img {
+  display: block;
+}
+
+a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.button {
+  display: inline-block;
+  margin-block: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--light);
+  border-radius: 0.25rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button,
+input[type='submit'] {
+  background-color: var(--light);
+  color: white
+}
+
+sup,
+sub {
+  line-height: 0;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.auto-grid {
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+}
+
+.auto-col {
+  grid-auto-flow: column;
+}
+
+@media screen and (max-width: 769px) {
+  .auto-col {
+    grid-auto-flow: unset;
+    gap: 0;
+  }
+}
+
+.clamp {
+  --max-lines: 4;
+  --line-height: 1.4;
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+  overflow: hidden;
+}

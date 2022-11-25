@@ -45,8 +45,10 @@
   /** @type {import('./$types').PageLoad} */
   export async function load({ fetch }: RequestEvent) {
     const BASE_URL = 'https://example.com/wp-json/wp/v2/'
+
     const response = await fetch(BASE_URL + 'posts')
     const posts: WP_REST_API_Posts = await response.json()
+    
     return { posts }
   }`}
       />

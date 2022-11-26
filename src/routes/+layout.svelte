@@ -22,6 +22,7 @@
       ],
     },
   ]}
+  logo="Stroopwafels Component Library"
 />
 
 <div id="slider">

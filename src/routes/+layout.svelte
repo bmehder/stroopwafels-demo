@@ -4,7 +4,6 @@
   import Slider from 'stroopwafels/Slider/Slider.svelte'
   import BackToTop from 'stroopwafels/BackToTop.svelte'
   import Footer from 'stroopwafels/Footer.svelte'
-  import { clickOutside } from 'stroopwafels/clickoutside'
 </script>
 
 <Header

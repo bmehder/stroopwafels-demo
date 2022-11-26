@@ -85,25 +85,11 @@
 </section>
 
 <style>
-  section > div {
-    max-width: 1100px;
-    margin-inline: auto;
-  }
-
-  /* Component style overrides */
-  #sveltetube :global(div div) {
-    gap: 3rem;
-  }
   #sveltetube h2 {
     margin-bottom: 0.5rem;
   }
-  #prism :global(div > div > div) {
-    margin: 0;
-  }
-  #tabs :global(aside) {
-    margin-block: 0;
-  }
+
   #tabs :global(h2) {
-    margin-block: 1.5rem 0.5rem;
+    margin-bottom: 0.5rem;
   }
 </style>

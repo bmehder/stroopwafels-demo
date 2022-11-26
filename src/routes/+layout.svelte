@@ -1,5 +1,6 @@
 <script>
   import '../app.css'
+  import { clickOutside } from 'stroopwafels/clickoutside'
   import Slider from 'stroopwafels/Slider/Slider.svelte'
 </script>
 
@@ -13,7 +14,7 @@
   />
 </svelte:head>
 
-<header>
+<header use:clickOutside={() => console.log('clicked outside')}>
   <div>
     <nav>
       <h1>Stroopwafels Component Library</h1>

@@ -13,8 +13,13 @@
   <div>
     <h2>SvelteTube</h2>
     <div class="grid auto-col">
-      <Sveltetube radius="1.5rem" shadow="0 5px 10px rgba(0,0,0,0.24)" />
       <Sveltetube
+        color="#eff0f4"
+        radius="1.5rem"
+        shadow="0 5px 10px rgba(0,0,0,0.24)"
+      />
+      <Sveltetube
+        color="#eff0f4"
         id="AdNJ3fydeao"
         radius="1.5rem"
         shadow="0 5px 10px rgba(0,0,0,0.24)"
@@ -52,13 +57,18 @@
       <div>
         <Prism
           code={`
-    // Viewport
-    <section
-      id="prism"
-      use:viewport={{ rootMargin: '32px' }}
-      on:enterViewport={() => console.log('Enter viewport')}
-      on:exitViewport={() => console.log('Exit viewport')}
-    >...`}
+        // Viewport
+        <section
+          id="prism"
+          use:viewport={{ rootMargin: '32px' }}
+          on:enterViewport={() => console.log('Enter viewport')}
+          on:exitViewport={() => console.log('Exit viewport')}
+        >...`}
+        />
+        <Prism
+          code={`
+        // ClickOutside
+        <header use:clickOutside={() => console.log('clicked outside')}>`}
         />
       </div>
     </div>

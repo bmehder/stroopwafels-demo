@@ -1,5 +1,7 @@
 <script>
+  import { isShowBackToTop } from 'stroopwafels/store'
   import { clickOutside } from 'stroopwafels/clickoutside'
+  import { viewport } from 'stroopwafels/viewport'
   import DarkMode from 'stroopwafels/DarkMode.svelte'
 </script>
 
@@ -13,7 +15,12 @@
   />
 </svelte:head>
 
-<header use:clickOutside={() => console.log('clicked outside')}>
+<header
+  use:clickOutside={() => console.log('clicked outside')}
+  use:viewport={{ rootMargin: '400px' }}
+  on:enterViewport={() => ($isShowBackToTop = false)}
+  on:exitViewport={() => ($isShowBackToTop = true)}
+>
   <div>
     <nav>
       <h1>Stroopwafels Component Library</h1>

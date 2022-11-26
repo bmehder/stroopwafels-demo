@@ -21,6 +21,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"stroopwafels": "^0.0.11"
+		"stroopwafels": "^0.0.12"
 	}
 }

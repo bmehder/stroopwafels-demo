@@ -2,6 +2,7 @@
   import '../app.css'
   import Slider from 'stroopwafels/Slider/Slider.svelte'
   import Header from '$lib/Header.svelte'
+  import BackToTop from 'stroopwafels/BackToTop.svelte'
 </script>
 
 <Header />
@@ -13,6 +14,8 @@
 <main>
   <slot />
 </main>
+
+<BackToTop />
 
 <style>
   main {

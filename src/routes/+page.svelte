@@ -3,6 +3,8 @@
   import Prism from 'stroopwafels/Prism/Prism.svelte'
   import Tabs from 'stroopwafels/Tabs.svelte'
   import { viewport } from 'stroopwafels/viewport'
+  import { clickOutside } from 'stroopwafels/clickoutside'
+  import { code } from './prismcode'
 </script>
 
 <svelte:head>
@@ -37,39 +39,14 @@
   <div>
     <h2>Prism</h2>
     <div>
-      <Prism
-        code={`
-    // TypeScript
-    import type { RequestEvent } from '@sveltejs/kit'
-    import type { WP_REST_API_Posts } from 'wp-types'
-  
-    /** @type {import('./$types').PageLoad} */
-    export async function load({ fetch }: RequestEvent) {
-      const BASE_URL = 'https://example.com/wp-json/wp/v2/'
-  
-      const response = await fetch(BASE_URL + 'posts')
-      const posts: WP_REST_API_Posts = await response.json()
-  
-      return { posts }
-    }`}
-      />
+      <Prism code={code.wpRestApiCode} />
       <h2>Actions</h2>
       <div>
-        <Prism
-          code={`
-        // Viewport
-        <section
-          id="prism"
-          use:viewport={{ rootMargin: '32px' }}
-          on:enterViewport={() => console.log('Enter viewport')}
-          on:exitViewport={() => console.log('Exit viewport')}
-        >...`}
-        />
-        <Prism
-          code={`
-        // ClickOutside (On Footer wrapper)
-        <div use:clickOutside={() => console.log('clicked outside')}>`}
-        />
+        <Prism code={code.viewportCode} />
+        <Prism code={code.clickOutsideCode} />
+        <button use:clickOutside={() => console.log('clicked outside')}
+          >Click Outside</button
+        >
       </div>
     </div>
   </div>

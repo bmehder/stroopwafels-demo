@@ -77,8 +77,13 @@ a.button {
 
 button,
 input[type='submit'] {
+  padding: 1rem 2rem;
   background-color: var(--light);
-  color: white
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  border-radius: 0.25rem;
 }
 
 sup,

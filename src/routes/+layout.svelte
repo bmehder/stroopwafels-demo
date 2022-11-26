@@ -3,7 +3,7 @@
   import Header from 'stroopwafels/Header/Header.svelte'
   import Slider from 'stroopwafels/Slider/Slider.svelte'
   import BackToTop from 'stroopwafels/BackToTop.svelte'
-  import Footer from '$lib/Footer.svelte'
+  import Footer from 'stroopwafels/Footer.svelte'
   import { clickOutside } from 'stroopwafels/clickoutside'
 </script>
 
@@ -34,8 +34,8 @@
   <slot />
 </main>
 
-<div use:clickOutside={() => console.log('clicked outside')}>
-  <Footer />
+<div>
+  <Footer --padding="3rem" />
 </div>
 
 <BackToTop --background="var(--light)" />

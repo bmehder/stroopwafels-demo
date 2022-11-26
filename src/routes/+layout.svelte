@@ -1,8 +1,9 @@
 <script>
   import '../app.css'
-  import Slider from 'stroopwafels/Slider/Slider.svelte'
   import Header from '$lib/Header.svelte'
+  import Slider from 'stroopwafels/Slider/Slider.svelte'
   import BackToTop from 'stroopwafels/BackToTop.svelte'
+  import Footer from '$lib/Footer.svelte'
 </script>
 
 <Header />
@@ -15,7 +16,9 @@
   <slot />
 </main>
 
-<BackToTop />
+<Footer />
+
+<BackToTop --background="var(--light)" />
 
 <style>
   main {

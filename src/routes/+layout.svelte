@@ -4,44 +4,60 @@
   import Slider from 'stroopwafels/Slider/Slider.svelte'
   import BackToTop from 'stroopwafels/BackToTop.svelte'
   import Footer from 'stroopwafels/Footer.svelte'
+  import { page } from '$app/stores'
 </script>
 
-<Header
-  --width="1100px"
-  items={[
-    {
-      name: 'NPM',
-      url: 'https://www.npmjs.com/package/stroopwafels',
-    },
-    {
-      name: 'GitHub',
-      url: 'https://github.com/bmehder/stroopwafels',
-      children: [
-        { name: 'Svelte', url: 'https://svelte.dev' },
-        { name: 'SvelteKit', url: 'https://kit.svelte.dev' },
-      ],
-    },
-  ]}
-  logo="Stroopwafels Component Library"
-/>
+<div class="wrapper">
+  <Header
+    --width="1100px"
+    items={[
+      {
+        name: 'NPM',
+        url: 'https://www.npmjs.com/package/stroopwafels',
+      },
+      {
+        name: 'GitHub',
+        url: 'https://github.com/bmehder/stroopwafels',
+        children: [
+          { name: 'Svelte', url: 'https://svelte.dev' },
+          { name: 'SvelteKit', url: 'https://kit.svelte.dev' },
+        ],
+      },
+    ]}
+    logo="Stroopwafels Component Library"
+  />
 
-<div id="slider">
-  <Slider --height="70vh" />
-</div>
+  {#if $page.route.id !== '/sidebar'}
+    <div id="slider">
+      <Slider --height="70vh" />
+    </div>
+  {/if}
 
-<main>
-  <slot />
-</main>
+  <main>
+    <slot />
+  </main>
 
-<div>
   <Footer --padding="3rem" />
 </div>
 
 <BackToTop --background="var(--light)" />
 
 <style>
+  .wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
   main {
-    padding: 2rem;
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+  @media (min-width: 1100px) {
+    main {
+      padding-block: 2rem;
+      padding-inline: 0rem;
+    }
   }
 
   #slider :global(span) {

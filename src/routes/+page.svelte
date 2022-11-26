@@ -67,8 +67,8 @@
         />
         <Prism
           code={`
-        // ClickOutside
-        <header use:clickOutside={() => console.log('clicked outside')}>`}
+        // ClickOutside (On Footer wrapper)
+        <div use:clickOutside={() => console.log('clicked outside')}>`}
         />
       </div>
     </div>

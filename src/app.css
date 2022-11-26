@@ -2,7 +2,7 @@
   --dark: #8a2387;
   --medium: #e94057;
   --light: #f27121;
-  --black: #222;
+  --black: #323232;
   /* --white: rgba(255, 255, 255, 0.8); */
   --white: #eff0f4;
   --shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
@@ -113,3 +113,6 @@ section > div {
   line-height: var(--line-height);
   overflow: hidden;
 }
+
+/* HACK */
+header li, header i { color: white;}

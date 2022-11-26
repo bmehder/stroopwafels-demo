@@ -1,12 +1,28 @@
 <script>
   import '../app.css'
-  import Header from '$lib/Header.svelte'
+  import Header from 'stroopwafels/Header/Header.svelte'
   import Slider from 'stroopwafels/Slider/Slider.svelte'
   import BackToTop from 'stroopwafels/BackToTop.svelte'
   import Footer from '$lib/Footer.svelte'
 </script>
 
-<Header />
+<Header
+  --width="1100px"
+  items={[
+    {
+      name: 'NPM',
+      url: 'https://www.npmjs.com/package/stroopwafels',
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/bmehder/stroopwafels',
+      children: [
+        { name: 'Svelte', url: 'https://svelte.dev' },
+        { name: 'SvelteKit', url: 'https://kit.svelte.dev' },
+      ],
+    },
+  ]}
+/>
 
 <div id="slider">
   <Slider --height="70vh" />

@@ -1,31 +1,18 @@
 <script>
   import '../app.css'
+  import Loading from '$lib/Loading.svelte'
   import Header from 'stroopwafels/Header/Header.svelte'
   import Slider from 'stroopwafels/Slider/Slider.svelte'
   import BackToTop from 'stroopwafels/BackToTop.svelte'
   import Footer from 'stroopwafels/Footer.svelte'
+  import { pages } from '$lib/pages'
   import { page } from '$app/stores'
 </script>
 
+<Loading />
+
 <div class="wrapper">
-  <Header
-    --width="1100px"
-    items={[
-      {
-        name: 'NPM',
-        url: 'https://www.npmjs.com/package/stroopwafels',
-      },
-      {
-        name: 'GitHub',
-        url: 'https://github.com/bmehder/stroopwafels',
-        children: [
-          { name: 'Svelte', url: 'https://svelte.dev' },
-          { name: 'SvelteKit', url: 'https://kit.svelte.dev' },
-        ],
-      },
-    ]}
-    logo="Stroopwafels Component Library"
-  />
+  <Header --width="1100px" items={pages} logo="Stroopwafels Component Library" />
 
   {#if $page.route.id !== '/sidebar'}
     <div id="slider">

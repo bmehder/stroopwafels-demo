@@ -4,7 +4,7 @@
   import Tabs from 'stroopwafels/Tabs.svelte'
   import { viewport } from 'stroopwafels/viewport'
   import { clickOutside } from 'stroopwafels/clickoutside'
-  import { code } from './prismcode'
+  import { code } from '../lib/prismcode'
 </script>
 
 <svelte:head>
@@ -21,8 +21,8 @@
         shadow="0 5px 10px rgba(0,0,0,0.24)"
       />
       <Sveltetube
-        color="#eff0f4"
         id="AdNJ3fydeao"
+        color="#eff0f4"
         radius="1.5rem"
         shadow="0 5px 10px rgba(0,0,0,0.24)"
       />
@@ -44,9 +44,11 @@
       <div>
         <Prism code={code.viewportCode} />
         <Prism code={code.clickOutsideCode} />
-        <button use:clickOutside={() => console.log('clicked outside')}
-          >Click Outside</button
-        >
+        <p>
+          <button use:clickOutside={() => console.log('clicked outside')}
+            >Click Outside</button
+          >
+        </p>
       </div>
     </div>
   </div>

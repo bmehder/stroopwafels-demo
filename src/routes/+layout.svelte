@@ -12,7 +12,12 @@
 <Loading />
 
 <div class="wrapper">
-  <Header --width="1100px" items={pages} logo="Stroopwafels Component Library" />
+  <Header
+    --width="1100px"
+    --padding="3rem"
+    items={pages}
+    logo="Stroopwafels Component Library"
+  />
 
   {#if $page.route.id !== '/sidebar'}
     <div id="slider">
@@ -38,15 +43,18 @@
   main {
     max-width: 1100px;
     margin-inline: auto;
+    padding-block: 1rem 3rem;
     padding-inline: 2rem;
   }
   @media (min-width: 1100px) {
     main {
-      padding-block: 2rem;
       padding-inline: 0rem;
     }
   }
 
+  #slider :global(button) {
+    border-radius: 0;
+  }
   #slider :global(span) {
     background: linear-gradient(
       to right,

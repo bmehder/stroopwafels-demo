@@ -1,3 +1,5 @@
+export const prerender = true
+
 // TypeScript
 import type { RequestEvent } from '@sveltejs/kit'
 import type { WP_REST_API_Posts } from 'wp-types'

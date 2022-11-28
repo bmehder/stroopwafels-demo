@@ -1,12 +1,13 @@
 <script>
-  import '../app.css'
+  import { page } from '$app/stores'
+  import { pages } from '$lib/pages'
   import Loading from '$lib/Loading.svelte'
+
+  import 'stroopwafels/app.css'
   import Header from 'stroopwafels/Header/Header.svelte'
   import Slider from 'stroopwafels/Slider/Slider.svelte'
   import BackToTop from 'stroopwafels/BackToTop.svelte'
   import Footer from 'stroopwafels/Footer.svelte'
-  import { pages } from '$lib/pages'
-  import { page } from '$app/stores'
 </script>
 
 <Loading />

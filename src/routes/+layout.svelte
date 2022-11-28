@@ -14,12 +14,12 @@
 <div class="wrapper">
   <Header
     --width="1100px"
-    --padding="3rem"
+    --padding="2rem"
     items={pages}
-    logo="Stroopwafels Component Library"
+    logo={`<img src="/stroopwafel.png" alt="stroopwafel" /><div>Stroopwafels<br><small>Svelte Component Library</small></div>`}
   />
 
-  {#if $page.route.id !== '/sidebar'}
+  {#if $page.route.id === '/'}
     <div id="slider">
       <Slider --height="70vh" />
     </div>
@@ -50,6 +50,27 @@
     main {
       padding-inline: 0rem;
     }
+  }
+
+  :global(nav h1) {
+    font-size: 1.2rem;
+  }
+  :global(nav h1 a:hover) {
+    text-decoration: none !important;
+  }
+  :global(nav h1 a div) {
+    color: var(--white);
+  }
+  :global(nav h1 a div small) {
+    color: var(--light);
+  }
+  :global(img) {
+    width: 4rem;
+  }
+  :global(nav h1 a) {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing) / 2);
   }
 
   #slider :global(button) {

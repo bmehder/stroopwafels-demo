@@ -8,6 +8,10 @@ export const pages = [
     url: '/sidebar',
   },
   {
+    name: 'Blog',
+    url: '/blog',
+  },
+  {
     name: 'NPM',
     url: 'https://www.npmjs.com/package/stroopwafels',
   },

@@ -21,6 +21,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"stroopwafels": "^1.0.30"
+		"stroopwafels": "^1.0.31",
+		"wp-types": "^2.9.0"
 	}
 }

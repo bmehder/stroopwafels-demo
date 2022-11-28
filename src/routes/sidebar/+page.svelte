@@ -99,6 +99,24 @@
       neque tenetur repudiandae quam voluptate? Molestiae, nemo temporibus impedit
       molestias quod esse iusto.
     </p>
+
+    <h2>Columns</h2>
+
+    <div class="grid auto-col">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore iure a
+        corrupti labore laboriosam tempora, voluptas esse ipsum quae architecto
+        officiis cumque, cum tenetur sint ipsam consequuntur. A, facere. Eos, minima
+        illum.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore iure a
+        corrupti labore laboriosam tempora, voluptas esse ipsum quae architecto
+        officiis cumque, cum tenetur sint ipsam consequuntur. A, facere. Eos, minima
+        illum.
+      </p>
+    </div>
   </div>
 
   <Sidebar />

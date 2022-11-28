@@ -1,4 +1,6 @@
 <script>
+  export const prerender = true
+
   import { page } from '$app/stores'
   import { pages } from '$lib/pages'
   import Loading from '$lib/Loading.svelte'

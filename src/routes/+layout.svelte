@@ -16,7 +16,7 @@
     --width="1100px"
     --padding="2rem"
     items={pages}
-    logo={`<img src="/stroopwafel.png" alt="stroopwafel" /><div>Stroopwafels<br><small>Svelte Component Library</small></div>`}
+    logo={`<img src="/stroopwafel.png" alt="stroopwafel" /><div>Svelte Stroopwafels<br><small> Component Library</small></div>`}
   />
 
   {#if $page.route.id === '/'}

@@ -14,7 +14,7 @@
 <section id="sveltetube">
   <div>
     <h2>SvelteTube</h2>
-    <div class="grid auto-col">
+    <div class="grid auto">
       <Sveltetube
         color="#eff0f4"
         radius="1.5rem"
@@ -39,7 +39,8 @@
   <div>
     <h2>Prism</h2>
     <div>
-      <Prism code={code.wpRestApiCode} />
+      <Prism code={code.wpRestApiCodeJavaScript} />
+      <Prism code={code.wpRestApiCodeTypeScript} />
       <h2>Actions</h2>
       <div>
         <Prism code={code.viewportCode} />
@@ -64,7 +65,7 @@
 </section>
 
 <style>
-  #sveltetube .auto-col,
+  #sveltetube .auto,
   #tabs div div {
     padding-top: 0.5rem;
   }

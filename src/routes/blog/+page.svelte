@@ -8,7 +8,7 @@
 
 <h1>Blog (auto-grid)</h1>
 
-<div class="grid auto-grid">
+<div class="grid auto">
   {#each data.posts as post}
     <Post {post} />
   {/each}
@@ -17,5 +17,8 @@
 <style>
   div {
     margin-block: var(--spacing);
+  }
+  .auto {
+    gap: calc(var(--spacing) * 2);
   }
 </style>

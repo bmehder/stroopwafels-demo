@@ -102,7 +102,7 @@
 
     <h2>Columns</h2>
 
-    <div class="grid auto-col">
+    <div class="grid columns">
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore iure a
         corrupti labore laboriosam tempora, voluptas esse ipsum quae architecto

@@ -7,8 +7,8 @@ export const code = {
       on:enterViewport={() => console.log('Enter viewport')}
       on:exitViewport={() => console.log('Exit viewport')}
     >...`,
-  wpRestApiCode: `
-    // TypeScript
+  wpRestApiCodeTypeScript: `
+  // TypeScript
     import type { RequestEvent } from '@sveltejs/kit'
     import type { WP_REST_API_Posts } from 'wp-types'
   
@@ -20,7 +20,19 @@ export const code = {
       const posts: WP_REST_API_Posts = await response.json()
   
       return { posts }
-    }`,
+    }
+    `,
+  wpRestApiCodeJavaScript: `
+    // JavaScript
+    export async function load({ fetch }) {
+      const BASE_URL = 'https://example.com/wp-json/wp/v2/'
+  
+      const response = await fetch(BASE_URL + 'posts')
+      const posts = await response.json()
+  
+      return { posts }
+    }
+  `,
   clickOutsideCode: `
     // ClickOutside
     <div use:clickOutside={() => console.log('clicked outside')}>`,

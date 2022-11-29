@@ -40,12 +40,15 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    overflow: auto;
   }
   main {
+    width: 100%;
     max-width: 1100px;
     margin-inline: auto;
     padding-block: 1rem 3rem;
     padding-inline: 2rem;
+    overflow: auto;
   }
   @media (min-width: 1100px) {
     main {
@@ -58,7 +61,7 @@
     font-size: 1.2rem;
   }
   :global(nav h1 a:hover) {
-    text-decoration: none !important;
+    text-decoration: none;
   }
   :global(nav h1 a div) {
     color: var(--white);

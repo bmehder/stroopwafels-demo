@@ -64,11 +64,8 @@
 </section>
 
 <style>
-  #sveltetube h2 {
-    margin-bottom: 0.5rem;
-  }
-
-  #tabs :global(h2) {
-    margin-bottom: 0.5rem;
+  #sveltetube .auto-col,
+  #tabs div div {
+    padding-top: 0.5rem;
   }
 </style>

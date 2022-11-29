@@ -53,6 +53,7 @@
     }
   }
 
+  /* Logo */
   :global(nav h1) {
     font-size: 1.2rem;
   }
@@ -65,7 +66,7 @@
   :global(nav h1 a div small) {
     color: var(--light);
   }
-  :global(img) {
+  :global(nav img) {
     width: 4rem;
   }
   :global(nav h1 a) {
@@ -74,9 +75,7 @@
     gap: calc(var(--spacing) / 2);
   }
 
-  #slider :global(button) {
-    border-radius: 0;
-  }
+  /* Slider text */
   #slider :global(span) {
     background: linear-gradient(
       to right,

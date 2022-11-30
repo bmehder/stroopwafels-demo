@@ -25,7 +25,7 @@
   .auto {
     gap: calc(var(--spacing) * 2);
   }
-  .blog :global(main) {
+  :global(main:has(.blog)) {
     overflow: visible;
   }
 </style>

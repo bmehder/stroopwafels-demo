@@ -123,6 +123,10 @@
 </div>
 
 <style>
+  .sidebar {
+    display: grid;
+    gap: calc(var(--spacing) * 2);
+  }
   @media (min-width: 769px) {
     .sidebar {
       grid-template-columns: 2fr 1fr;

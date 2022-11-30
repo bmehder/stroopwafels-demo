@@ -69,4 +69,9 @@
   #tabs div div {
     padding-top: 0.5rem;
   }
+  /* Hack */
+  :global(header li),
+  :global(header i) {
+    color: white;
+  }
 </style>

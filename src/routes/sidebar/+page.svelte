@@ -127,6 +127,10 @@
     display: grid;
     gap: calc(var(--spacing) * 2);
   }
+  blockquote {
+    background-color: var(--light);
+    color: var(--white);
+  }
   @media (min-width: 769px) {
     .sidebar {
       grid-template-columns: 2fr 1fr;

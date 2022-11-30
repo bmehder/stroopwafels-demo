@@ -30,12 +30,7 @@
   </div>
 </section>
 
-<section
-  id="prism"
-  use:viewport={{ rootMargin: '32px' }}
-  on:enterViewport={() => console.log('Enter viewport')}
-  on:exitViewport={() => console.log('Exit viewport')}
->
+<section id="prism">
   <div>
     <h2>Prism</h2>
     <div>
@@ -55,7 +50,12 @@
   </div>
 </section>
 
-<section id="tabs">
+<section
+  id="tabs"
+  use:viewport={{}}
+  on:enterViewport={() => console.log('Enter viewport')}
+  on:exitViewport={() => console.log('Exit viewport')}
+>
   <div>
     <h2>Tabs</h2>
     <div>

@@ -6,6 +6,10 @@
   export let data: PageData
 </script>
 
+<svelte:head>
+  <title>Blog</title>
+</svelte:head>
+
 <h1>Blog (auto-grid)</h1>
 
 <div class="grid auto">

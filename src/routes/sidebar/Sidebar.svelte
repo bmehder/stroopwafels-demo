@@ -2,6 +2,10 @@
   import Sveltetube from 'stroopwafels/Sveltetube.svelte'
 </script>
 
+<svelte:head>
+  <title>Sidebar Demo</title>
+</svelte:head>
+
 <aside>
   <div>
     <h2>The Sidebar</h2>

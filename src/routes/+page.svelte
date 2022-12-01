@@ -11,6 +11,8 @@
   <title>Stroopwafels Component Library</title>
 </svelte:head>
 
+<h1>Components</h1>
+
 <section id="sveltetube">
   <div>
     <h2>SvelteTube</h2>
@@ -36,16 +38,22 @@
     <div>
       <Prism code={code.wpRestApiCodeJavaScript} />
       <Prism code={code.wpRestApiCodeTypeScript} />
-      <h2>Actions</h2>
-      <div>
-        <Prism code={code.viewportCode} />
-        <Prism code={code.clickOutsideCode} />
-        <p>
-          <button use:clickOutside={() => console.log('clicked outside')}
-            >Click Outside</button
-          >
-        </p>
-      </div>
+    </div>
+    <h2>Actions</h2>
+    <div>
+      <Prism code={code.viewportCode} />
+      <Prism code={code.clickOutsideCode} />
+    </div>
+  </div>
+</section>
+
+<section id="click-outside">
+  <div>
+    <h2>Click Outside</h2>
+    <div>
+      <button use:clickOutside={() => console.log('clicked outside')}
+        >Click Outside</button
+      >
     </div>
   </div>
 </section>
@@ -65,12 +73,7 @@
 </section>
 
 <style>
-  #sveltetube .auto,
-  #tabs div div {
-    padding-top: 0.5rem;
-  }
   /* Hack */
-  :global(header li),
   :global(header i) {
     color: white;
   }

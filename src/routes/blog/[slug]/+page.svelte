@@ -12,17 +12,8 @@
   <title>{post.title.rendered}</title>
 </svelte:head>
 
-<article>
-  <img {src} alt={post.title.rendered} />
-  <h1>{@html post.title.rendered}</h1>
-  <div>{@html post.content.rendered}</div>
-</article>
+<img {src} alt={post.title.rendered} />
 
-<style>
-  article {
-    padding-block: var(--spacing);
-  }
-  img {
-    width: 100%;
-  }
-</style>
+<h1>{@html post.title.rendered}</h1>
+
+<div class="auto-format">{@html post.content.rendered}</div>

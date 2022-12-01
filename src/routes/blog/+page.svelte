@@ -12,20 +12,8 @@
 
 <h1>Blog (auto-grid)</h1>
 
-<div class="grid auto blog">
+<div class="grid auto">
   {#each data.posts as post}
     <Post {post} />
   {/each}
 </div>
-
-<style>
-  div {
-    margin-block: var(--spacing);
-  }
-  .auto {
-    gap: calc(var(--spacing) * 2);
-  }
-  :global(main:has(.blog)) {
-    overflow: visible;
-  }
-</style>

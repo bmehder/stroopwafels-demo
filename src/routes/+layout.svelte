@@ -42,19 +42,6 @@
     min-height: 100vh;
     overflow: auto;
   }
-  main {
-    width: 100%;
-    max-width: 1100px;
-    margin-inline: auto;
-    padding-block: 1rem 3rem;
-    padding-inline: 2rem;
-    overflow: auto;
-  }
-  @media (min-width: 1100px) {
-    main {
-      padding-inline: 0rem;
-    }
-  }
 
   /* Logo */
   :global(nav h1) {
@@ -63,7 +50,8 @@
   :global(nav h1 a:hover) {
     text-decoration: none;
   }
-  :global(nav h1 a div) {
+  :global(nav h1 a div),
+  :global(header i) {
     color: var(--white);
   }
   :global(nav h1 a div small) {

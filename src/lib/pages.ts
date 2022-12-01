@@ -4,8 +4,8 @@ export const pages = [
     url: '/',
   },
   {
-    name: 'Sidebar',
-    url: '/sidebar',
+    name: 'About',
+    url: '/about',
   },
   {
     name: 'Blog',

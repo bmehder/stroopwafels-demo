@@ -4,19 +4,17 @@
   import Tabs from 'stroopwafels/Tabs.svelte'
   import { viewport } from 'stroopwafels/viewport'
   import { clickOutside } from 'stroopwafels/clickoutside'
-  import { code } from '../lib/prismcode'
+  import { code } from '$lib/prismcode'
 </script>
 
 <svelte:head>
   <title>Stroopwafels Component Library</title>
 </svelte:head>
 
-<h1>Components</h1>
-
 <section id="sveltetube">
   <div>
     <h2>SvelteTube</h2>
-    <div class="grid auto">
+    <div class="grid auto auto-format">
       <Sveltetube
         color="#eff0f4"
         radius="1.5rem"
@@ -66,15 +64,24 @@
 >
   <div>
     <h2>Tabs</h2>
-    <div>
+    <div class="grid columns auto-format">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eos ipsum
+        neque deserunt atque quae inventore necessitatibus consequatur hic minus,
+        exercitationem perferendis qui aut error ipsam distinctio veritatis. Dicta
+        officiis facilis similique, ipsa tempora voluptatibus eligendi dolorum, saepe
+        ipsum tenetur sequi veniam inventore exercitationem nam ratione in numquam
+        quo eveniet pariatur iure debitis, deserunt hic molestias quod. Deleniti amet
+        rem, eligendi, voluptate reiciendis voluptatibus aliquam non exercitationem
+        modi eveniet fugiat, nihil autem saepe.
+      </p>
       <Tabs --color="var(--light)" />
     </div>
   </div>
 </section>
 
 <style>
-  /* Hack */
-  :global(header i) {
-    color: white;
+  #tabs .grid {
+    align-items: start;
   }
 </style>

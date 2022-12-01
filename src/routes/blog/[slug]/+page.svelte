@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { PageData } from './$types'
 
-  /** @type {import('./$types').PageData} */
   export let data: PageData
 
   const post = data.post[0]
@@ -17,3 +16,9 @@
 <h1>{@html post.title.rendered}</h1>
 
 <div class="auto-format">{@html post.content.rendered}</div>
+
+<style>
+  .auto-format :global(li):not(:last-child) {
+    padding-bottom: 1rem;
+  }
+</style>

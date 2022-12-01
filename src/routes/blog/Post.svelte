@@ -6,11 +6,11 @@
   const src = post._embedded?.['wp:featuredmedia'][0].source_url
 </script>
 
-<div class="card">
+<div class="card ">
   <a href="/blog/{post.slug}" data-sveltekit-prefetch
     ><img {src} loading="lazy" alt={post.title.rendered} /></a
   >
-  <div class="content">
+  <div class="content auto-format">
     <h2>
       <a href="/blog/{post.slug}" data-sveltekit-prefetch
         >{@html post.title.rendered}</a

@@ -44,16 +44,6 @@
   }
 
   /* Logo */
-  :global(nav h1) {
-    font-size: 1.2rem;
-  }
-  :global(nav h1 a:hover) {
-    text-decoration: none;
-  }
-  :global(nav h1 a div),
-  :global(header i) {
-    color: var(--white);
-  }
   :global(nav h1 a div small) {
     color: var(--light);
   }

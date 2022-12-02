@@ -10,10 +10,12 @@
   <title>Blog</title>
 </svelte:head>
 
-<h1>Blog (auto-grid)</h1>
+<section>
+  <h1>Blog (auto-grid)</h1>
 
-<div class="grid auto">
-  {#each data.posts as post}
-    <Post {post} />
-  {/each}
-</div>
+  <div class="grid auto">
+    {#each data.posts as post}
+      <Post {post} />
+    {/each}
+  </div>
+</section>

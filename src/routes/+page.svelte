@@ -1,10 +1,12 @@
 <script src="ts">
+  import { code } from '$lib/prismcode'
+
+  import { viewport } from 'stroopwafels/viewport'
+  import { clickOutside } from 'stroopwafels/clickoutside'
+
   import Sveltetube from 'stroopwafels/Sveltetube.svelte'
   import Prism from 'stroopwafels/Prism/Prism.svelte'
   import Tabs from 'stroopwafels/Tabs.svelte'
-  import { viewport } from 'stroopwafels/viewport'
-  import { clickOutside } from 'stroopwafels/clickoutside'
-  import { code } from '$lib/prismcode'
 </script>
 
 <svelte:head>

@@ -11,11 +11,13 @@
   <title>{post.title.rendered}</title>
 </svelte:head>
 
-<img {src} alt={post.title.rendered} />
+<section>
+  <img {src} alt={post.title.rendered} />
 
-<h1>{@html post.title.rendered}</h1>
+  <h1>{@html post.title.rendered}</h1>
 
-<div class="auto-format">{@html post.content.rendered}</div>
+  <div class="auto-format">{@html post.content.rendered}</div>
+</section>
 
 <style>
   .auto-format :global(li):not(:last-child) {

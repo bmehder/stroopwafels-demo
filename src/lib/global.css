@@ -1,0 +1,65 @@
+/* HEADINGS */
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+/* Logo */
+nav h1 a div small {
+  color: var(--light);
+}
+
+nav h1 {
+  margin-left: -0.5rem !important;
+  font-size: 1.25rem;
+}
+
+nav img {
+  width: 4rem;
+}
+
+nav h1 a {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) / 2);
+}
+
+/* Slider text */
+#slider span {
+  background: linear-gradient(to right,
+      var(--dark),
+      var(--medium),
+      var(--light),
+      var(--dark));
+  background-size: 200%;
+  white-space: nowrap;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: background-pan 32s linear infinite;
+  text-shadow: none;
+  filter: drop-shadow(1rem 1rem 2rem rgba(0, 0, 0, 0.24));
+}
+
+@media (max-width: 600px) {
+  #slider h2 {
+    top: 50% !important;
+  }
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}

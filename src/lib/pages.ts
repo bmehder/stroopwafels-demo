@@ -8,6 +8,10 @@ export const pages = [
     url: '/about',
   },
   {
+    name: 'Sidebar',
+    url: '/sidebar',
+  },
+  {
     name: 'Blog',
     url: '/blog',
   },

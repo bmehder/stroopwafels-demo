@@ -4,7 +4,7 @@
   import Loading from '$lib/Loading.svelte'
 
   import 'stroopwafels/app.css'
-  import '$lib/global.css'
+  import '$lib/theme.css'
   import Header from 'stroopwafels/Header/Header.svelte'
   import Slider from 'stroopwafels/Slider/Slider.svelte'
   import BackToTop from 'stroopwafels/BackToTop.svelte'
@@ -35,12 +35,3 @@
 </div>
 
 <BackToTop --background="var(--light)" />
-
-<style>
-  .wrapper {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
-    overflow: auto;
-  }
-</style>

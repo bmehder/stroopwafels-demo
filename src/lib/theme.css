@@ -19,7 +19,6 @@ nav h1 a {
 }
 
 /* Slider text */
-
 #slider span {
   background: linear-gradient(to right,
       var(--dark),
@@ -52,8 +51,3 @@ nav h1 a {
   }
 }
 /* RFCs */
-
-/* Added */
-.full-bleed {
-  margin-block: calc(var(--spacing) * 1.5);
-}

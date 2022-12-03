@@ -1,7 +1,6 @@
 <script src="ts">
   import { code } from '$lib/prismcode'
 
-  import { viewport } from 'stroopwafels/viewport'
   import { clickOutside } from 'stroopwafels/clickoutside'
 
   import Sveltetube from 'stroopwafels/Sveltetube.svelte'
@@ -58,12 +57,7 @@
   </div>
 </section>
 
-<section
-  id="tabs"
-  use:viewport={{}}
-  on:enterViewport={() => console.log('Enter viewport')}
-  on:exitViewport={() => console.log('Exit viewport')}
->
+<section id="tabs">
   <div>
     <h2>Tabs</h2>
     <div class="grid columns auto-format">

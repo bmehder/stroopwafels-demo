@@ -3,18 +3,23 @@
 
   <h2>Tempora nisi dolores doloremque</h2>
 
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nisi dolores
-    doloremque iure assumenda tenetur nobis eligendi velit corporis. Esse voluptatem
-    delectus repudiandae dolor facere, quaerat temporibus recusandae eligendi animi
-    ipsa ea. Eos neque at <a href="/">reiciendis</a> dolore voluptatibus dicta ipsam quia
-    beatae suscipit in deleniti, facilis quo doloribus esse itaque rem nam, aspernatur,
-    ut molestiae possimus ducimus laboriosam. Numquam voluptas error distinctio eum officia
-    alias qui tempore eveniet quibusdam obcaecati? Quae voluptates soluta assumenda animi
-    ullam tempora alias voluptatum. Cumque aliquid, velit sit quos a dolores repellat
-    earum saepe accusantium non reprehenderit, molestias culpa, debitis tempora facilis
-    impedit excepturi unde.
-  </p>
+  <div class="grid two columns">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nisi dolores
+      doloremque iure assumenda tenetur nobis eligendi velit corporis. Esse
+      voluptatem delectus repudiandae dolor facere, quaerat temporibus recusandae
+      eligendi animi ipsa ea. Eos neque at <a href="/">reiciendis</a> dolore voluptatibus
+      dicta ipsam quia beatae suscipit in deleniti, facilis quo doloribus esse itaque
+      rem nam, aspernatur, ut molestiae possimus ducimus laboriosam. Numquam voluptas
+      error distinctio eum officia alias qui tempore eveniet quibusdam obcaecati? Quae
+      voluptates soluta assumenda animi ullam tempora alias voluptatum. Cumque aliquid,
+      velit sit quos a dolores repellat earum saepe accusantium non reprehenderit, molestias
+      culpa, debitis tempora facilis impedit excepturi unde. alias qui tempore eveniet
+      quibusdam obcaecati? Quae voluptates soluta assumenda animi ullam tempora alias
+      voluptatum.
+    </p>
+    <img src="/slides/slider3.jpg" alt="" />
+  </div>
 
   <ul>
     <li>One</li>
@@ -173,3 +178,20 @@
 
   <button>Button</button>
 </section>
+
+<style>
+  .two {
+    align-items: stretch;
+  }
+
+  img {
+    object-fit: cover;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius);
+  }
+  @media (min-width: 769px) {
+    .two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

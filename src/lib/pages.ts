@@ -29,4 +29,8 @@ export const pages = [
       { name: 'SvelteKit', url: 'https://kit.svelte.dev', target: '_blank' },
     ],
   },
+  {
+    name: 'Contact',
+    url: '/contact',
+  },
 ]

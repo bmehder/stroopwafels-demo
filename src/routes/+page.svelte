@@ -6,6 +6,9 @@
   import Sveltetube from 'stroopwafels/Sveltetube.svelte'
   import Prism from 'stroopwafels/Prism/Prism.svelte'
   import Tabs from 'stroopwafels/Tabs.svelte'
+  import Modal from 'stroopwafels/Modal.svelte'
+
+  let isOpen = false
 </script>
 
 <svelte:head>
@@ -72,6 +75,38 @@
         modi eveniet fugiat, nihil autem saepe.
       </p>
       <Tabs --color="var(--light)" />
+    </div>
+  </div>
+</section>
+
+<section id="modal">
+  <div>
+    <h2>Modal</h2>
+    <div>
+      <Modal
+        bind:isOpen
+        on:click={() => (isOpen = false)}
+        on:escape={() => (isOpen = false)}
+      >
+        <div class="auto-format">
+          <h2>I am a Modal!</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, quae
+            nostrum labore quas dolorum voluptatem officia, qui delectus aliquam
+            harum corporis laboriosam quibusdam ducimus ipsam sed sunt recusandae!
+            Modi facilis illum vero rem sunt ipsa perferendis deleniti molestias ex
+            impedit delectus debitis, asperiores velit recusandae beatae voluptatem
+            cum omnis, quia earum molestiae repellendus? Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Adipisci, quae nostrum labore quas dolorum
+            voluptatem officia, qui delectus aliquam harum corporis laboriosam
+            quibusdam ducimus ipsam sed sunt recusandae! Modi facilis illum vero rem
+            sunt ipsa perferendis deleniti molestias ex impedit delectus debitis,
+            asperiores velit recusandae beatae voluptatem cum omnis, quia earum
+            molestiae repellendus?
+          </p>
+        </div></Modal
+      >
+      <button on:click={() => (isOpen = true)}>Open Modal</button>
     </div>
   </div>
 </section>

@@ -4,7 +4,7 @@
   export let data: PageData
 
   const post = data.post[0]
-  const src = post._embedded?.['wp:featuredmedia'][0].source_url
+  const src = post?._embedded['wp:featuredmedia'][0].source_url
 </script>
 
 <svelte:head>

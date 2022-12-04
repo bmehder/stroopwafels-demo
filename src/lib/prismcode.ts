@@ -1,12 +1,12 @@
 export const code = {
   viewportCode: `
-    // Viewport
-    <section
-      id="prism"
-      use:viewport={{ rootMargin: '32px' }}
-      on:enterViewport={() => console.log('Enter viewport')}
-      on:exitViewport={() => console.log('Exit viewport')}
-    >...`,
+  // Viewport
+    <header
+      use:viewport={{ rootMargin: '100%' }}
+      on:enterViewport={() => ($isShowBackToTop = false)}
+      on:exitViewport={() => ($isShowBackToTop = true)}
+    >...
+  `,
   wpRestApiCodeTypeScript: `
   // TypeScript
     import type { RequestEvent } from '@sveltejs/kit'
@@ -34,6 +34,9 @@ export const code = {
     }
   `,
   clickOutsideCode: `
-    // ClickOutside
-    <div use:clickOutside={() => console.log('clicked outside')}>`,
+  // ClickOutside
+    <button use:clickOutside={() => console.log('clicked outside')}>
+      Click Outside
+    </button>
+  `,
 }

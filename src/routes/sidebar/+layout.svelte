@@ -49,6 +49,9 @@
       max-width: 1100px;
       margin-inline: auto;
     }
+    aside {
+      margin-right: var(--spacing);
+    }
     :global(main:has(.sidebar)) {
       padding-block-end: calc(var(--spacing) * 2);
     }

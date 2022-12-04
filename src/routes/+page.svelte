@@ -84,14 +84,13 @@
     <h2>Modal</h2>
     <div>
       <Modal
-        bind:isOpen
+        {isOpen}
         on:click={() => (isOpen = false)}
         on:escape={() => (isOpen = false)}
         --background="var(--white)"
         --color="var(--black)"
         --closeBackground="var(--light)"
-        --closeColor="white"
-        --backdrop="rgba(0, 0, 0, 0.9)"
+        --closeColor="var(--white)"
       >
         <div class="auto-format">
           <h2>I am a Modal!</h2>
@@ -109,8 +108,8 @@
             asperiores velit recusandae beatae voluptatem cum omnis, quia earum
             molestiae repellendus?
           </p>
-        </div></Modal
-      >
+        </div>
+      </Modal>
       <button on:click={() => (isOpen = true)}>Open Modal</button>
     </div>
   </div>

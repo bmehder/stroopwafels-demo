@@ -23,7 +23,7 @@ export const code = {
     }
     `,
   wpRestApiCodeJavaScript: `
-    // JavaScript
+  // JavaScript
     export async function load({ fetch }) {
       const BASE_URL = 'https://example.com/wp-json/wp/v2/'
   

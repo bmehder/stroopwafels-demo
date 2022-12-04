@@ -11,11 +11,11 @@ export const actions = {
     const email = formData.get('email')
     const message = formData.get('message')
 
-    const results = {
+    const response = {
       name,
       email,
       message,
     }
-    return { results }
+    return { response }
   },
 }

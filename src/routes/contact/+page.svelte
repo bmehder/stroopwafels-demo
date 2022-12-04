@@ -5,20 +5,29 @@
 
   export let form: ActionData
 
-  $: form?.results && ($isSubmittingForm = false)
+  $: form?.response && ($isSubmittingForm = false)
 </script>
 
 <h1 class="section">Contact</h1>
 
 <section>
-  {#if form?.results}
-    {JSON.stringify(form)}
+  {#if form?.response}
+    <pre>{JSON.stringify(form, null, 2)}</pre>
   {:else}
     <form method="POST" use:enhance>
-      <input name="name" type="text" placeholder="Enter your name..." />
-      <input name="email" type="email" placeholder="Enter your email..." />
-      <textarea rows="5" name="message" placeholder="Enter your message..." />
-      <button on:click={() => ($isSubmittingForm = true)}>Submit</button>
+      <input name="name" type="text" placeholder="Enter your name..." required />
+      <input name="email" type="email" placeholder="Enter your email..." required />
+      <textarea
+        rows="5"
+        name="message"
+        placeholder="Enter your message..."
+        required
+      />
+      <input
+        on:click={() => ($isSubmittingForm = true)}
+        type="submit"
+        value="Submit Message"
+      />
     </form>
   {/if}
   {#if $isSubmittingForm}

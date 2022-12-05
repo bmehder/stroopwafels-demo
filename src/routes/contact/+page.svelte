@@ -23,19 +23,22 @@
         placeholder="Enter your message..."
         required
       />
-      <input
+      <button
+        class:isSubmittingForm={$isSubmittingForm}
         on:click={() => ($isSubmittingForm = true)}
-        type="submit"
-        value="Submit Message"
-      />
+        >{$isSubmittingForm
+          ? 'Submitting Form. Patience!'
+          : 'Submit Message'}</button
+      >
     </form>
-  {/if}
-  {#if $isSubmittingForm}
-    <p>The form is submitting. Patience!</p>
   {/if}
 </section>
 
 <style>
+  .isSubmittingForm {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
   form {
     display: flex;
     flex-direction: column;

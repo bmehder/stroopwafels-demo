@@ -57,7 +57,8 @@
 </section>
 
 <style>
-  :disabled {
+  :disabled,
+  .isSubmittingForm {
     cursor: not-allowed;
     opacity: 0.5;
   }

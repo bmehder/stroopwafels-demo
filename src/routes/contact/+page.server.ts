@@ -16,6 +16,7 @@ export const actions = {
       email,
       message,
     }
+
     return { response }
   },
 }

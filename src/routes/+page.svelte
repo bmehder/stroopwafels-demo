@@ -6,6 +6,7 @@
   import Sveltetube from 'stroopwafels/Sveltetube.svelte'
   import Prism from 'stroopwafels/Prism/Prism.svelte'
   import Tabs from 'stroopwafels/Tabs.svelte'
+  import Tooltip from 'stroopwafels/Tooltip.svelte'
   import Modal from 'stroopwafels/Modal.svelte'
 
   let isOpen = false
@@ -65,13 +66,14 @@
     <h2>Tabs</h2>
     <div class="grid columns auto-format">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eos ipsum
-        neque deserunt atque quae inventore necessitatibus consequatur hic minus,
-        exercitationem perferendis qui aut error ipsam distinctio veritatis. Dicta
-        officiis facilis similique, ipsa tempora voluptatibus eligendi dolorum, saepe
-        ipsum tenetur sequi veniam inventore exercitationem nam ratione in numquam
-        quo eveniet pariatur iure debitis, deserunt hic molestias quod. Deleniti amet
-        rem, eligendi, voluptate reiciendis voluptatibus aliquam non exercitationem
+        Lorem ipsum dolor sit amet, <Tooltip message="I'm a tooltip!"
+          >consectetur</Tooltip
+        > adipisicing elit. Totam, eos ipsum neque deserunt atque quae inventore necessitatibus
+        consequatur hic minus, exercitationem perferendis qui aut error ipsam distinctio
+        veritatis. Dicta officiis facilis similique, ipsa tempora voluptatibus eligendi
+        dolorum, saepe ipsum tenetur sequi veniam inventore exercitationem nam ratione
+        in numquam quo eveniet pariatur iure debitis, deserunt hic molestias quod. Deleniti
+        amet rem, eligendi, voluptate reiciendis voluptatibus aliquam non exercitationem
         modi eveniet fugiat, nihil autem saepe.
       </p>
       <Tabs --color="var(--light)" />

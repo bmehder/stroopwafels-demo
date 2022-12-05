@@ -50,41 +50,21 @@
   </div>
 </section>
 
-<section id="click-outside">
-  <div>
-    <h2>Click Outside</h2>
-    <div>
-      <button use:clickOutside={() => console.log('clicked outside')}
-        >Click Outside</button
-      >
-    </div>
-  </div>
-</section>
-
-<section id="tabs">
-  <div>
-    <h2>Tabs</h2>
-    <div class="grid columns auto-format">
-      <p>
-        Lorem ipsum dolor sit amet, <Tooltip message="I'm a tooltip!"
-          >consectetur</Tooltip
-        > adipisicing elit. Totam, eos ipsum neque deserunt atque quae inventore necessitatibus
-        consequatur hic minus, exercitationem perferendis qui aut error ipsam distinctio
-        veritatis. Dicta officiis facilis similique, ipsa tempora voluptatibus eligendi
-        dolorum, saepe ipsum tenetur sequi veniam inventore exercitationem nam ratione
-        in numquam quo eveniet pariatur iure debitis, deserunt hic molestias quod. Deleniti
-        amet rem, eligendi, voluptate reiciendis voluptatibus aliquam non exercitationem
-        modi eveniet fugiat, nihil autem saepe.
-      </p>
-      <Tabs --color="var(--light)" />
-    </div>
-  </div>
-</section>
-
 <section id="modal">
-  <div>
-    <h2>Modal</h2>
-    <div>
+  <div class="grid columns">
+    <div class="auto-format">
+      <h2>Click Outside</h2>
+      <div>
+        <button use:clickOutside={() => console.log('clicked outside')}
+          >Click Outside</button
+        >
+      </div>
+    </div>
+    <div class="auto-format">
+      <h2>Modal</h2>
+      <div>
+        <button on:click={() => (isOpen = true)}>Open Modal</button>
+      </div>
       <Modal
         {isOpen}
         on:click={() => (isOpen = false)}
@@ -112,13 +92,40 @@
           </p>
         </div>
       </Modal>
-      <button on:click={() => (isOpen = true)}>Open Modal</button>
     </div>
   </div>
 </section>
 
+<section id="tabs">
+  <div class="grid">
+    <div class="auto-format">
+      <h2>Tooltip</h2>
+      <p>
+        Lorem ipsum dolor sit amet, <Tooltip message="I'm a tooltip!"
+          >consectetur</Tooltip
+        > adipisicing elit. Totam, eos ipsum neque deserunt atque quae inventore necessitatibus
+        consequatur hic minus, exercitationem perferendis qui aut error ipsam distinctio
+        veritatis. Dicta officiis facilis similique, ipsa tempora voluptatibus eligendi
+        dolorum, saepe ipsum tenetur sequi veniam inventore exercitationem nam ratione
+        in numquam quo eveniet pariatur iure debitis, deserunt hic molestias quod. Deleniti
+        amet rem, eligendi, voluptate reiciendis voluptatibus aliquam non exercitationem
+        modi eveniet fugiat, nihil autem saepe.
+      </p>
+    </div>
+    <div class="auto-format">
+      <h2>Tabs</h2>
+      <Tabs --color="var(--light)" />
+    </div>
+  </div>
+</section>
+
+<section id="modal" />
+
 <style>
-  #tabs .grid {
-    align-items: start;
+  @media (min-width: 769px) {
+    #tabs .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: calc(var(--spacing) * 2);
+    }
   }
 </style>

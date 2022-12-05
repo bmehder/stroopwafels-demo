@@ -5,15 +5,7 @@
 
   export let form: ActionData
 
-  let name = ''
-  let email = ''
-  let message = ''
-
-  $: isValidated = name !== '' && email !== '' && message !== ''
-
   $: form?.response && ($isSubmittingForm = false)
-
-  $: console.log(isValidated)
 </script>
 
 <h1 class="section">Contact</h1>
@@ -23,31 +15,10 @@
     <pre>{JSON.stringify(form, null, 2)}</pre>
   {:else}
     <form method="POST" use:enhance>
-      <input
-        bind:value={name}
-        name="name"
-        type="text"
-        placeholder="Enter your name..."
-        required
-      />
-      <input
-        bind:value={email}
-        name="email"
-        type="email"
-        placeholder="Enter your email..."
-        required
-      />
-      <textarea
-        bind:value={message}
-        rows="5"
-        name="message"
-        placeholder="Enter your message..."
-        required
-      />
-      <button
-        disabled={!isValidated}
-        class:isSubmittingForm={$isSubmittingForm}
-        on:click={() => ($isSubmittingForm = true)}
+      <input name="name" type="text" placeholder="Enter your name..." />
+      <input name="email" type="email" placeholder="Enter your email..." />
+      <textarea rows="5" name="message" placeholder="Enter your message..." />
+      <button on:click={() => ($isSubmittingForm = true)}
         >{$isSubmittingForm
           ? 'Submitting Form. Patience!'
           : 'Submit Message'}</button
@@ -57,11 +28,6 @@
 </section>
 
 <style>
-  :disabled,
-  .isSubmittingForm {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
   form {
     display: flex;
     flex-direction: column;

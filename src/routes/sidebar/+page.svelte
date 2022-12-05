@@ -1,3 +1,11 @@
+<svelte:head>
+  <title>Sidebar - Stroopwafels Component Library</title>
+  <meta
+    name="description"
+    content="An example of a page with a responsive sidebar."
+  />
+</svelte:head>
+
 <div class="section auto-format">
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, aperiam, aliquid

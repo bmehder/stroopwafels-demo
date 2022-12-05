@@ -7,7 +7,11 @@
 </script>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>Blog - Stroopwafels Component Library</title>
+  <meta
+    name="description"
+    content="An example of a blog page that gets content from a WP REST API."
+  />
 </svelte:head>
 
 <section>

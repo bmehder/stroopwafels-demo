@@ -13,7 +13,11 @@
 </script>
 
 <svelte:head>
-  <title>Stroopwafels Component Library</title>
+  <title>Home - Stroopwafels Component Library</title>
+  <meta
+    name="description"
+    content="A demo site to show and test a collection of Svelte Components, Svelte actions, and a stylesheet."
+  />
 </svelte:head>
 
 <section id="sveltetube">

@@ -1,3 +1,11 @@
+<svelte:head>
+  <title>About - Stroopwafels Component Library</title>
+  <meta
+    name="description"
+    content="An example of an about page with some columns and a full bleed section."
+  />
+</svelte:head>
+
 <section>
   <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
 

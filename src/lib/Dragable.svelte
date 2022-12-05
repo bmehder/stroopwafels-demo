@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fade } from 'svelte/transition'
   import { browser } from '$app/environment'
 
   export let id: string
@@ -10,17 +11,16 @@
     left: number
   }
 
-  let isMoving = false
   let component: HTMLDivElement
   let position: Position = { top, left }
+  let isMoving = false
+  let isShow = true
 
   const onMousedown = (): void => {
     isMoving = true
   }
 
   const onMousemove = (evt: MouseEvent) => {
-    if (!isMoving) return
-
     left += evt.movementX
     top += evt.movementY
   }
@@ -39,30 +39,64 @@
     top = position?.top ?? top
     left = position?.left ?? left
   }
+
+  const reset = () => {
+    localStorage.clear()
+    location.reload()
+  }
 </script>
 
-<div
-  bind:this={component}
-  use:getPosition
-  on:mousedown={onMousedown}
-  style="top: {top}px; left: {left}px;"
->
-  <slot />
-</div>
+<span on:click={reset} on:keypress>Reset Dragables</span>
 
-<svelte:window on:mouseup={onMouseup} on:mousemove={onMousemove} />
+{#if isShow}
+  <div
+    bind:this={component}
+    use:getPosition
+    on:mousedown={onMousedown}
+    transition:fade={{ duration: 100 }}
+    style="top: {top}px; left: {left}px;"
+  >
+    <slot />
+  </div>
+{/if}
+
+<svelte:window
+  on:mouseup={onMouseup}
+  on:mousemove={evt => isMoving && onMousemove(evt)}
+/>
 
 <style>
   div {
+    max-width: calc(var(--spacing) * 20);
     position: absolute;
-    margin: 0;
-    padding: 0.5rem;
+    padding: var(--spacing);
     background: var(--background, var(--white));
     color: var(--color, var(--black));
-    box-sizing: border-box;
     box-shadow: var(--shadow);
+    border-radius: var(--radius);
     user-select: none;
     cursor: move;
     border: none;
+    overflow: auto;
+  }
+  span {
+    position: fixed;
+    padding: calc(var(--spacing) / 2);
+    background-color: var(--white);
+    color: var(--black);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+    cursor: pointer;
+  }
+  span:hover {
+    opacity: 1;
+  }
+  @media (max-width: 768px) {
+    div,
+    span {
+      display: none;
+    }
   }
 </style>

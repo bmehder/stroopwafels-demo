@@ -3,6 +3,10 @@
 </script>
 
 <div class="section">
+  <h1>Dragables</h1>
+</div>
+
+<div class="section">
   <Dragable
     id="1"
     top={100}
@@ -21,5 +25,15 @@
     left={100}
     --background="var(--light)"
     --color="var(--white)">This is a Dragable.</Dragable
+  >
+  <Dragable
+    id="42"
+    top={350}
+    left={400}
+    --background="var(--medium)"
+    --color="var(--white)"
+    ><div style="width: calc(var(--spacing) * 18);">
+      <img src="/slides/slider1.jpg" alt="" />
+    </div></Dragable
   >
 </div>

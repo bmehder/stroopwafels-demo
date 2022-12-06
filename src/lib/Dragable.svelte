@@ -14,7 +14,6 @@
   let component: HTMLDivElement
   let position: Position = { top, left }
   let isMoving = false
-  let isShow = true
 
   const onMousedown = (): void => {
     isMoving = true
@@ -51,17 +50,15 @@
 
 <span on:click={reset} on:keypress>Reset Dragables</span>
 
-{#if isShow}
-  <div
-    bind:this={component}
-    use:getPosition
-    on:mousedown={onMousedown}
-    transition:fade={{ duration: 100 }}
-    style="top: {top}px; left: {left}px;"
-  >
-    <slot />
-  </div>
-{/if}
+<div
+  bind:this={component}
+  use:getPosition
+  on:mousedown={onMousedown}
+  in:fade={{ duration: 100 }}
+  style="top: {top}px; left: {left}px;"
+>
+  <slot />
+</div>
 
 <svelte:window
   on:mouseup={onMouseup}
@@ -81,6 +78,9 @@
     cursor: move;
     border: none;
     overflow: auto;
+  }
+  div > :global(*) {
+    pointer-events: none;
   }
   span {
     position: fixed;

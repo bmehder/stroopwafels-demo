@@ -41,8 +41,11 @@
   }
 
   const reset = () => {
-    localStorage.clear()
-    location.reload()
+    const isSure = confirm('Are you sure you want to reset your dragables?')
+    if (isSure) {
+      localStorage.clear()
+      location.reload()
+    }
   }
 </script>
 

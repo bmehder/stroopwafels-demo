@@ -99,13 +99,15 @@
   </div>
 </section>
 
-<section id="tabs">
+<section id="tabs" class="full-bleed">
   <div class="grid auto">
     <div class="auto-format">
       <h2>Tooltip</h2>
       <p>
-        Lorem ipsum dolor sit amet, <Tooltip message="I'm a tooltip!"
-          >consectetur</Tooltip
+        Lorem ipsum dolor sit amet, <Tooltip
+          message="I'm a tooltip!"
+          --background="var(--light)"
+          --color="var(--white)">consectetur</Tooltip
         > adipisicing elit. Totam, eos ipsum neque deserunt atque quae inventore necessitatibus
         consequatur hic minus, exercitationem perferendis qui aut error ipsam distinctio
         veritatis. Dicta officiis facilis similique, ipsa tempora voluptatibus eligendi
@@ -125,7 +127,13 @@
 <section id="dialogue" class="grid auto">
   <div>
     <h2>Dialogue</h2>
-    <Dialogue />
+    <Dialogue --background="transparent" />
   </div>
   <div />
 </section>
+
+<style>
+  #tabs {
+    padding-bottom: calc(var(--spacing) * 2);
+  }
+</style>

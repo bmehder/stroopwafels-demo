@@ -10,24 +10,29 @@ export const pages = [
   {
     name: 'Sidebar',
     url: '/sidebar',
-    children: [{ name: 'Draggable', url: '/drag' }],
   },
   {
     name: 'Blog',
     url: '/blog',
   },
+
   {
-    name: 'NPM',
-    url: 'https://www.npmjs.com/package/stroopwafels',
-    target: '_blank',
-  },
-  {
-    name: 'GitHub',
-    url: 'https://github.com/bmehder/stroopwafels',
-    target: '_blank',
+    name: 'Dox',
+    url: '/docs',
     children: [
+      {
+        name: 'NPM',
+        url: 'https://www.npmjs.com/package/stroopwafels',
+        target: '_blank',
+      },
+      {
+        name: 'GitHub',
+        url: 'https://github.com/bmehder/stroopwafels',
+        target: '_blank',
+      },
       { name: 'Svelte', url: 'https://svelte.dev', target: '_blank' },
       { name: 'SvelteKit', url: 'https://kit.svelte.dev', target: '_blank' },
+      { name: 'Draggable', url: '/drag' },
     ],
   },
   {

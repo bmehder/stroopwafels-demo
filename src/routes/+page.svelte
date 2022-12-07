@@ -71,8 +71,7 @@
       </div>
       <Modal
         {isOpen}
-        on:click={() => (isOpen = false)}
-        on:escape={() => (isOpen = false)}
+        on:closemodal={() => (isOpen = false)}
         --background="var(--white)"
         --color="var(--black)"
         --closeBackground="var(--light)"

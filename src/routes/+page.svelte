@@ -7,6 +7,7 @@
   import Tabs from 'stroopwafels/Tabs.svelte'
   import Tooltip from 'stroopwafels/Tooltip.svelte'
   import Modal from 'stroopwafels/Modal.svelte'
+  import Dialogue from 'stroopwafels/Dialogue.svelte'
 
   let isOpen = false
 </script>
@@ -119,4 +120,12 @@
       <Tabs --color="var(--light)" />
     </div>
   </div>
+</section>
+
+<section id="dialogue" class="grid auto">
+  <div>
+    <h2>Dialogue</h2>
+    <Dialogue />
+  </div>
+  <div />
 </section>

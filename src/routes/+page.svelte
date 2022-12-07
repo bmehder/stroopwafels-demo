@@ -2,7 +2,6 @@
   import { code } from '$lib/prismcode'
 
   import { clickOutside } from 'stroopwafels/clickoutside'
-
   import Sveltetube from 'stroopwafels/Sveltetube.svelte'
   import Prism from 'stroopwafels/Prism/Prism.svelte'
   import Tabs from 'stroopwafels/Tabs.svelte'

@@ -23,7 +23,7 @@
 
   {#if $page.route.id === '/'}
     <div id="slider">
-      <Slider --height="70vh" />
+      <Slider --height="70vh" color="white" />
     </div>
   {/if}
 

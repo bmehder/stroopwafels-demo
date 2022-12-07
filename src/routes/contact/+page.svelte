@@ -16,9 +16,8 @@
   />
 </svelte:head>
 
-<h1 class="section">Contact</h1>
-
-<section>
+<section id="contact">
+  <h1>Contact</h1>
   {#if form?.response}
     <pre>{JSON.stringify(form, null, 2)}</pre>
   {:else}

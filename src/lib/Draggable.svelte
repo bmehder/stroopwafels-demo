@@ -15,16 +15,16 @@
   let position: Position = { top, left }
   let isMoving = false
 
-  const onMousedown = (): void => {
+  const handleMousedown = (): void => {
     isMoving = true
   }
 
-  const onMousemove = (evt: MouseEvent) => {
+  const handleMousemove = (evt: MouseEvent) => {
     left += evt.movementX
     top += evt.movementY
   }
 
-  const onMouseup = () => {
+  const handleMouseup = () => {
     top = component?.getBoundingClientRect().top + scrollY
     left = component?.getBoundingClientRect().left + scrollX
 
@@ -33,27 +33,29 @@
     isMoving = false
   }
 
-  const getPosition = (node: HTMLDivElement) => {
+  const setPosition = (node: HTMLDivElement) => {
     position = browser && JSON.parse(localStorage.getItem(id)!)
     top = position?.top ?? top
     left = position?.left ?? left
+    browser && localStorage.setItem(id, JSON.stringify({ top, left }))
   }
 
-  const reset = () => {
+  const resetPosition = () => {
     const isSure = confirm('Are you sure you want to reset your dragables?')
-    if (isSure) {
-      localStorage.clear()
-      location.reload()
-    }
+
+    if (!isSure) return
+
+    localStorage.clear()
+    location.reload()
   }
 </script>
 
-<span on:click={reset} on:keypress>Reset Dragables</span>
+<span on:click={resetPosition} on:keypress>Reset Dragables</span>
 
 <div
   bind:this={component}
-  use:getPosition
-  on:mousedown={onMousedown}
+  use:setPosition
+  on:mousedown={handleMousedown}
   in:fade={{ duration: 100 }}
   style="top: {top}px; left: {left}px;"
 >
@@ -61,8 +63,8 @@
 </div>
 
 <svelte:window
-  on:mouseup={onMouseup}
-  on:mousemove={evt => isMoving && onMousemove(evt)}
+  on:mouseup={handleMouseup}
+  on:mousemove={evt => isMoving && handleMousemove(evt)}
 />
 
 <style>
@@ -78,8 +80,10 @@
     cursor: move;
     border: none;
     overflow: auto;
+    box-sizing: border-box;
   }
-  div > :global(*) {
+
+  div :global(*) {
     pointer-events: none;
   }
   span {

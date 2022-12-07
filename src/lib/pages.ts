@@ -10,6 +10,7 @@ export const pages = [
   {
     name: 'Sidebar',
     url: '/sidebar',
+    children: [{ name: 'Draggable', url: '/drag' }],
   },
   {
     name: 'Blog',

@@ -55,7 +55,7 @@
 </section>
 
 <section id="modal">
-  <div class="grid columns">
+  <div class="grid auto">
     <div class="auto-format">
       <h2>Click Outside</h2>
       <div>
@@ -101,7 +101,7 @@
 </section>
 
 <section id="tabs">
-  <div class="grid">
+  <div class="grid auto">
     <div class="auto-format">
       <h2>Tooltip</h2>
       <p>
@@ -122,14 +122,3 @@
     </div>
   </div>
 </section>
-
-<section id="modal" />
-
-<style>
-  @media (min-width: 769px) {
-    #tabs .grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: calc(var(--spacing) * 2);
-    }
-  }
-</style>

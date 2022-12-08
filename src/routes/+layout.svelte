@@ -23,7 +23,48 @@
 
   {#if $page.route.id === '/'}
     <div id="slider">
-      <Slider --height="70vh" color="white" />
+      <Slider
+        --height="70vh"
+        color="white"
+        slides={[
+          {
+            src: '/slides/slider1.jpg',
+            text: 'An Interesting Title',
+            options: {
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%,-50%)',
+            },
+          },
+          {
+            src: '/slides/slider2.jpg',
+            text: 'Are You Not Impressed?',
+            options: {
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%,-50%)',
+            },
+          },
+          {
+            src: '/slides/slider3.jpg',
+            text: "You're a Tough Crowd.",
+            options: {
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%,-50%)',
+            },
+          },
+          {
+            src: '/slides/slider4.jpg',
+            text: 'Anyway, this is the last slide.',
+            options: {
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%,-50%)',
+            },
+          },
+        ]}
+      />
     </div>
   {/if}
 

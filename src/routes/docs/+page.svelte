@@ -24,6 +24,7 @@
     <option>Tooltip</option>
     <option value="Viewport">Viewport action</option>
     <option value="Clickoutside">Clickoutside action</option>
+    <option>Switch</option>
   </select>
 </div>
 
@@ -216,6 +217,14 @@
     <button use:clickOutside={() => console.log('clicked outside')}>
       Click Outside
     </button>
+  `}
+  />
+
+  <h2 id="Switch">Switch</h2>
+
+  <Prism
+    code={`
+    <Switch on:checked={handleChecked} on:unchecked={handleUnchecked} --background="var(--light)" />
   `}
   />
 </section>

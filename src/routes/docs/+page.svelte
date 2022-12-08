@@ -1,5 +1,6 @@
 <script lang="ts">
   import { browser } from '$app/environment'
+
   import Prism from 'stroopwafels/Prism/Prism.svelte'
 
   let value: string

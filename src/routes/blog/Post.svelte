@@ -24,6 +24,10 @@
   .card {
     box-shadow: var(--shadow);
   }
+  :global(.dark) .card {
+    background-color: var(--black);
+  }
+
   .content {
     padding: var(--spacing);
   }

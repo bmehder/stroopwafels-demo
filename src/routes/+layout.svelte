@@ -1,6 +1,7 @@
 <script>
   import { page } from '$app/stores'
   import { pages } from '$lib/pages'
+  import { slides } from '$lib/slides'
   import Loading from '$lib/Loading.svelte'
 
   import 'stroopwafels/app.css'
@@ -17,54 +18,14 @@
   <Header
     --width="1100px"
     --padding="2rem"
+    --background="#242424"
     items={pages}
     logo={`<img src="/stroopwafel.png" alt="stroopwafel" /><div>Svelte Stroopwafels<br><small> Component Library</small></div>`}
   />
 
   {#if $page.route.id === '/'}
     <div id="slider">
-      <Slider
-        --height="70vh"
-        color="white"
-        slides={[
-          {
-            src: '/slides/slider1.jpg',
-            text: 'An Interesting Title',
-            options: {
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%,-50%)',
-            },
-          },
-          {
-            src: '/slides/slider2.jpg',
-            text: 'Are You Not Impressed?',
-            options: {
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%,-50%)',
-            },
-          },
-          {
-            src: '/slides/slider3.jpg',
-            text: "You're a Tough Crowd.",
-            options: {
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%,-50%)',
-            },
-          },
-          {
-            src: '/slides/slider4.jpg',
-            text: 'Anyway, this is the last slide.',
-            options: {
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%,-50%)',
-            },
-          },
-        ]}
-      />
+      <Slider {slides} color="white" --height="70vh" />
     </div>
   {/if}
 
@@ -72,7 +33,7 @@
     <slot />
   </main>
 
-  <Footer --padding="3rem" />
+  <Footer --padding="3rem" --background="#010101" />
 </div>
 
 <BackToTop --background="var(--light)" />

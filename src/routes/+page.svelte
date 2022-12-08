@@ -7,6 +7,7 @@
   import Tabs from 'stroopwafels/Tabs.svelte'
   import Tooltip from 'stroopwafels/Tooltip.svelte'
   import Modal from 'stroopwafels/Modal.svelte'
+  import Switch from 'stroopwafels/Switch.svelte'
 
   let isOpen = false
 </script>
@@ -94,6 +95,12 @@
           </p>
         </div>
       </Modal>
+    </div>
+    <div class="auto-format">
+      <h2>Switch</h2>
+      <div>
+        <Switch on:checked={() => console.log('Checked')} />
+      </div>
     </div>
   </div>
 </section>

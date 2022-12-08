@@ -32,7 +32,14 @@ export const pages = [
       },
       { name: 'Svelte', url: 'https://svelte.dev', target: '_blank' },
       { name: 'SvelteKit', url: 'https://kit.svelte.dev', target: '_blank' },
-      { name: 'Draggable', url: '/drag' },
+    ],
+  },
+  {
+    name: 'Playground',
+    url: '/playground',
+    children: [
+      { name: 'Draggables', url: '/drag' },
+      { name: 'Dialogue', url: '/dialogue' },
     ],
   },
   {

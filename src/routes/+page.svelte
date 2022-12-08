@@ -7,7 +7,6 @@
   import Tabs from 'stroopwafels/Tabs.svelte'
   import Tooltip from 'stroopwafels/Tooltip.svelte'
   import Modal from 'stroopwafels/Modal.svelte'
-  import Dialogue from 'stroopwafels/Dialogue.svelte'
 
   let isOpen = false
 </script>
@@ -124,12 +123,35 @@
   </div>
 </section>
 
-<section id="dialogue" class="grid auto">
-  <div>
-    <h2>Dialogue</h2>
-    <Dialogue --background="transparent" />
+<section>
+  <div><h2>Heading</h2></div>
+  <div class="grid columns">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quasi non facere
+      eaque sunt, voluptatem est tempora optio veniam voluptatibus expedita corporis
+      temporibus nemo laudantium quaerat obcaecati odio sapiente architecto delectus,
+      modi iusto soluta voluptate accusamus? Quibusdam tenetur, qui, harum repellat
+      deleniti magni illo enim culpa iusto assumenda ipsa, quo voluptates provident
+      iste eius! Laboriosam recusandae aperiam autem mollitia vel quia repellat.
+      Autem, molestias iusto! Tempore quos recusandae assumenda odit eum provident
+      temporibus veniam reprehenderit voluptas repellendus dolore laudantium
+      similique, doloremque quod tempora dignissimos corporis amet quidem cumque
+      culpa quas repudiandae aliquam. Quae deleniti et ea expedita consequatur magnam
+      assumenda.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae consequatur
+      modi labore repellendus illo necessitatibus libero a, maxime, distinctio eum
+      atque, fugit delectus quibusdam enim similique ratione veniam nobis eius
+      corporis eveniet? Porro nihil quaerat numquam et, repellendus in incidunt
+      dolores consequatur nam vel doloribus, animi, esse asperiores enim voluptate
+      corrupti. Ad ducimus rerum suscipit sapiente impedit delectus dignissimos
+      dolore et aliquam incidunt? At accusamus ut quia. Earum mollitia sed commodi
+      excepturi sapiente ab maxime numquam architecto cum voluptatum repudiandae
+      atque, at assumenda accusantium sequi autem ratione soluta qui quaerat
+      similique quibusdam dolorem, aliquam et? Eaque eum consectetur totam quas.
+    </p>
   </div>
-  <div />
 </section>
 
 <style>

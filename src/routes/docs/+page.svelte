@@ -33,6 +33,8 @@
     code={`
     <Sveltetube
       id="AdNJ3fydeao"
+      title="Rich Harris - Rethinking reactivity"
+      poster="/slides/slider1.jpg"
       color="#eff0f4"
       radius="1.5rem"
       shadow="0 5px 10px rgba(0,0,0,0.24)"

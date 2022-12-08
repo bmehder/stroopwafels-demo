@@ -1,5 +1,6 @@
 <script src="ts">
   import { code } from '$lib/prismcode'
+  import { browser } from '$app/environment'
 
   import { clickOutside } from 'stroopwafels/clickoutside'
   import Sveltetube from 'stroopwafels/Sveltetube.svelte'
@@ -10,6 +11,13 @@
   import Switch from 'stroopwafels/Switch.svelte'
 
   let isOpen = false
+
+  const handleChecked = () => {
+    browser && (document.body.style.filter = 'blur(5px)')
+  }
+  const handleUnchecked = () => {
+    browser && (document.body.style.filter = 'unset')
+  }
 </script>
 
 <svelte:head>
@@ -99,7 +107,7 @@
     <div class="auto-format">
       <h2>Switch</h2>
       <div>
-        <Switch on:checked={() => console.log('Checked')} />
+        <Switch on:checked={handleChecked} on:unchecked={handleUnchecked} />
       </div>
     </div>
   </div>

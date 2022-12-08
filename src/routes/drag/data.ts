@@ -1,8 +1,8 @@
 export let draggables = [
   {
     id: 'One',
-    top: 0,
-    left: 0,
+    top: 250,
+    left: 300,
     background: 'var(--dark)',
     color: 'var(--white)',
     content: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla deleniti ea

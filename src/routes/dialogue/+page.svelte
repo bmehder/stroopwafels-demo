@@ -8,7 +8,6 @@
 
 <section id="dialogue" class="grid auto">
   <div>
-    <h2>Dialogue</h2>
     <Dialogue --background="transparent" />
   </div>
   <div />

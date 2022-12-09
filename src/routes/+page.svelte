@@ -1,6 +1,6 @@
-<script src="ts">
+<script lang="ts">
   import { code } from '$lib/prismcode'
-  import { browser } from '$app/environment'
+  import type { SvelteComponentTyped } from 'svelte'
 
   import { clickOutside } from 'stroopwafels/clickoutside'
   import Sveltetube from 'stroopwafels/Sveltetube.svelte'
@@ -10,7 +10,7 @@
   import Modal from 'stroopwafels/Modal.svelte'
   import Switch from 'stroopwafels/Switch.svelte'
 
-  let isOpen = false
+  let modal: SvelteComponentTyped
 </script>
 
 <svelte:head>
@@ -79,11 +79,10 @@
     <div class="auto-format">
       <h2>Modal</h2>
       <div>
-        <button on:click={() => (isOpen = true)}>Open Modal</button>
+        <button on:click={() => modal.openModal()}>Open Modal</button>
       </div>
       <Modal
-        {isOpen}
-        on:closemodal={() => (isOpen = false)}
+        bind:this={modal}
         --background="var(--white)"
         --color="var(--black)"
         --closeBackground="var(--light)"

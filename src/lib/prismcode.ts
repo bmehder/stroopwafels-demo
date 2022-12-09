@@ -10,10 +10,10 @@ export const code = {
   wpRestApiCodeTypeScript: `
   // TypeScript
     import type { RequestEvent } from '@sveltejs/kit'
+    import type { PageLoad } from './$types';
     import type { WP_REST_API_Posts } from 'wp-types'
   
-    /** @type {import('./$types').PageLoad} */
-    export async function load({ fetch }: RequestEvent) {
+    export async function load({ fetch }: RequestEvent): PageLoad {
       const BASE_URL = 'https://example.com/wp-json/wp/v2/'
   
       const response = await fetch(BASE_URL + 'posts')

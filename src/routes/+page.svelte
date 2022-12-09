@@ -11,13 +11,6 @@
   import Switch from 'stroopwafels/Switch.svelte'
 
   let isOpen = false
-
-  const handleChecked = () => {
-    browser && (document.body.style.filter = 'blur(5px)')
-  }
-  const handleUnchecked = () => {
-    browser && (document.body.style.filter = 'unset')
-  }
 </script>
 
 <svelte:head>
@@ -118,7 +111,10 @@
     <div class="auto-format">
       <h2>Switch</h2>
       <div>
-        <Switch on:checked={handleChecked} on:unchecked={handleUnchecked} />
+        <Switch
+          on:checked={() => console.log('Checked')}
+          on:unchecked={() => console.log('Unchecked')}
+        />
       </div>
     </div>
   </div>

@@ -26,7 +26,7 @@
 
   {#if $page.route.id === '/'}
     <div id="slider">
-      <Slider {slides} color="white" --height="70vh" />
+      <Slider {slides} isAutoplay={true} color="white" --height="70vh" />
     </div>
   {/if}
 
@@ -34,7 +34,7 @@
     <slot />
   </main>
 
-  <Footer --padding="3rem" --background="#010101" />
+  <Footer --padding="3rem" --background="#111" />
 </div>
 
 <BackToTop --background="var(--light)" />

@@ -18,7 +18,8 @@
   <Header
     --width="1100px"
     --padding="2rem"
-    --background="#242424"
+    --background="var(--white)"
+    --color="var(--black)"
     items={pages}
     logo={`<img src="/stroopwafel.png" alt="stroopwafel" /><div>Svelte Stroopwafels<br><small> Component Library</small></div>`}
   />

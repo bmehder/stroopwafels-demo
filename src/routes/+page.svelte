@@ -26,6 +26,17 @@
     name="description"
     content="A demo site to show and test a collection of Svelte Components, Svelte actions, and a stylesheet."
   />
+  <style>
+    .dark {
+      background: radial-gradient(
+        circle at 100%,
+        #111,
+        #111 50%,
+        #222 75%,
+        #111 75%
+      );
+    }
+  </style>
 </svelte:head>
 
 <section id="sveltetube">

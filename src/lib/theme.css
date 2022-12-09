@@ -1,13 +1,14 @@
 :root {
-  --white: white
+  --white: white;
 }
 
 body {
+  font-size: 16px;
   transition: filter 300ms ease-in-out;
 }
 
-.dark {
-  background: radial-gradient(circle at 100%, #111, #111 50%, #181818 75%, #111 75%);
+.dark  {
+  background-color: #161616;
 }
 
 /* Logo */
@@ -30,10 +31,31 @@ nav h1 a {
   gap: calc(var(--spacing) / 2);
 }
 
-nav ul ul {
-  background-color: #242424 !important;
+.isOpen > ul > li {
+  border-bottom: 1px solid var(--black) !important;
 }
 
+header {
+  border-bottom: calc(var(--spacing) / 4) solid var(--black);
+}
+
+header svg,
+header i {
+  color: var(--black) !important;
+}
+
+.dark header {
+  background-color: var(--black) !important;
+}
+.dark nav a, .dark nav svg, .dark i  {
+  color: var(--white) !important;
+}
+.dark nav ul ul {
+  background-color: var(--black) !important;
+}
+.dark .isOpen > ul > li {
+  border-bottom: 1px solid var(--white) !important;
+}
 /* Slider */
 #slider article::after {
   content: '';

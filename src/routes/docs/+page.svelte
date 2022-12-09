@@ -173,15 +173,16 @@
   <h2 id="Modal">Modal</h2>
 
   <Prism
-    code={`
+    code={`      
     <Modal
-      isOpen={true}
-      on:closemodal={() => (isOpen = false)}
+      bind:this={modal}
       --background="var(--white)"
       --color="var(--black)"
       --closeBackground="var(--light)"
       --closeColor="var(--white)"
-    >
+    >...content </Modal>
+
+    <button on:click={() => modal.openModal()}>Open Modal</button>
   `}
   />
 

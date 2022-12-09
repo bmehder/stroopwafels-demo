@@ -35,10 +35,6 @@ nav h1 a {
   border-bottom: 1px solid var(--black) !important;
 }
 
-header.isOpen {
-  padding-block: 1.5rem 0 !important;
-}
-
 header {
   border-bottom: calc(var(--spacing) / 4) solid var(--black);
 }

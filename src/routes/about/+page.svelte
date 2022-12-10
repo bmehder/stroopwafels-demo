@@ -11,7 +11,7 @@
 
   <h2>Tempora nisi dolores doloremque</h2>
 
-  <div class="grid two columns">
+  <div class="grid">
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nisi dolores
       doloremque iure assumenda tenetur nobis eligendi velit corporis. Esse
@@ -188,18 +188,10 @@
 </section>
 
 <style>
-  .two {
-    align-items: stretch;
-  }
-
-  img {
-    object-fit: cover;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    border-radius: var(--radius);
-  }
-  @media (min-width: 769px) {
-    .two {
+  @media (min-width: 900px) {
+    .grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
     }
   }
 </style>

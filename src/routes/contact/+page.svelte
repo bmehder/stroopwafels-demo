@@ -5,7 +5,18 @@
 
   export let form: ActionData
 
-  $: form?.response && ($isSubmittingForm = false)
+  let name = ''
+  let email = ''
+  let message = ''
+
+  $: disabled = !name || !email || !email.includes('@') || message.length < 5
+
+  $: if (form?.response) {
+    name = ''
+    email = ''
+    message = ''
+    $isSubmittingForm = false
+  }
 </script>
 
 <svelte:head>
@@ -18,18 +29,37 @@
 
 <section id="contact">
   <h1>Contact</h1>
-  {#if form?.response}
+  {#if form?.success}
     <pre>{JSON.stringify(form, null, 2)}</pre>
+  {:else if form && !form?.success}
+    <p>The submission was not successful. Please try again.</p>
   {:else}
     <form method="POST" use:enhance>
-      <input name="name" type="text" placeholder="Enter your name..." />
-      <input name="email" type="email" placeholder="Enter your email..." />
-      <textarea rows="5" name="message" placeholder="Enter your message..." />
-      <button on:click={() => ($isSubmittingForm = true)}
-        >{$isSubmittingForm
-          ? 'Submitting Form. Patience!'
-          : 'Submit Message'}</button
-      >
+      <input
+        name="name"
+        type="text"
+        placeholder="Enter your name..."
+        bind:value={name}
+      />
+      <input
+        name="email"
+        type="email"
+        placeholder="Enter your email..."
+        bind:value={email}
+      />
+      <textarea
+        rows="5"
+        name="message"
+        placeholder="Enter your message..."
+        bind:value={message}
+      />
+      <button on:click={() => ($isSubmittingForm = true)} {disabled}>
+        {#if $isSubmittingForm}
+          Submitting Form. Please Wait...
+        {:else}
+          Submit Form
+        {/if}
+      </button>
     </form>
   {/if}
 </section>
@@ -46,6 +76,10 @@
   }
   textarea {
     font-family: inherit;
+  }
+  :disabled {
+    background: gray;
+    cursor: not-allowed;
   }
   @media (min-width: 769px) {
     form {

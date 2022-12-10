@@ -102,14 +102,3 @@ main:has(.sidebar) {
   Styles under consideration to be moved to the 
   the base stylesheet
 */
-#slider svg {
-  color: var(--light);
-}
-
-#slider svg path {
-  background-color: white;
-}
-
-#slider button svg {
-  color: var(--white);
-}

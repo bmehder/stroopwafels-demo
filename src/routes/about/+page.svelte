@@ -6,12 +6,12 @@
   />
 </svelte:head>
 
-<section>
-  <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
+<h1 class="section">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
 
+<section>
   <h2>Tempora nisi dolores doloremque</h2>
 
-  <div class="grid">
+  <div>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nisi dolores
       doloremque iure assumenda tenetur nobis eligendi velit corporis. Esse
@@ -24,17 +24,10 @@
       velit sit quos a dolores repellat earum saepe accusantium non reprehenderit, molestias
       culpa, debitis tempora facilis impedit excepturi unde. alias qui tempore eveniet
       quibusdam obcaecati? Quae voluptates soluta assumenda animi ullam tempora alias
-      voluptatum.
+      voluptatum. Cumque aliquid, velit sit quos a dolores repellat earum saepe accusantium
+      non reprehenderit, molestias culpa, debitis tempora facilis impedit excepturi unde.
     </p>
-    <img src="/slides/slider3.jpg" alt="" />
   </div>
-
-  <ul>
-    <li>One</li>
-    <li>Two</li>
-    <li>Three</li>
-    <li>Four</li>
-  </ul>
 </section>
 
 <section>
@@ -186,12 +179,3 @@
 
   <button>Button</button>
 </section>
-
-<style>
-  @media (min-width: 900px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
-    }
-  }
-</style>

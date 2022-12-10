@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit'
 import type { RequestHandler } from './$types'
 
-export const GET = (({ url }) => {
+export const GET: RequestHandler = ({ url }) => {
   const min = Number(url.searchParams.get('min') ?? '0')
   const max = Number(url.searchParams.get('max') ?? '1')
 
@@ -14,4 +14,4 @@ export const GET = (({ url }) => {
   const random = min + Math.random() * d
 
   return new Response(String(random))
-}) satisfies RequestHandler
+}

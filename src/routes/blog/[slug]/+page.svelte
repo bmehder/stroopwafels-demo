@@ -4,23 +4,20 @@
   export let data: PageData
 
   const post = data.post[0]
-  const src = post?._embedded['wp:featuredmedia'][0].source_url
+
+  const src: string = post._embedded?.['wp:featuredmedia']![0]!.source_url
+  const title = post.title.rendered
+  const content = post.content.rendered
 </script>
 
 <svelte:head>
-  <title>{post.title.rendered}</title>
+  <title>{title}</title>
 </svelte:head>
 
 <section>
-  <img {src} alt={post.title.rendered} />
+  <img {src} alt={title} />
 
-  <h1>{@html post.title.rendered}</h1>
+  <h1>{@html title}</h1>
 
-  <div class="auto-format">{@html post.content.rendered}</div>
+  <div>{@html content}</div>
 </section>
-
-<style>
-  .auto-format :global(li):not(:last-child) {
-    padding-bottom: 1rem;
-  }
-</style>

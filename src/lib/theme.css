@@ -11,6 +11,10 @@ body {
   background-color: #161616;
 }
 
+label {
+  font-weight: bold;
+}
+
 /* Logo */
 nav h1 a div small {
   color: var(--light);

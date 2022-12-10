@@ -14,7 +14,7 @@
 </svelte:head>
 
 <section>
-  <h1>Blog (auto-grid)</h1>
+  <h1>Blog</h1>
 
   <div class="grid auto">
     {#each data.posts as post}

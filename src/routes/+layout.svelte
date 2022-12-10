@@ -7,6 +7,7 @@
   import '$lib/theme.css'
 
   import Loading from '$lib/components/Loading.svelte'
+  import Outliner from 'stroopwafels/Outliner.svelte'
 
   import Header from 'stroopwafels/Header/Header.svelte'
   import Slider from 'stroopwafels/Slider/Slider.svelte'
@@ -15,6 +16,7 @@
 </script>
 
 <Loading />
+<Outliner --background="var(--light)" --color="white" />
 
 <div class="wrapper">
   <Header

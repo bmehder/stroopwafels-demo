@@ -2,7 +2,6 @@
   import type { PageData } from './$types'
   import Post from './Post.svelte'
 
-  /** @type {import('./$types').PageData} */
   export let data: PageData
 </script>
 

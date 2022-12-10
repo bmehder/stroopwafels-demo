@@ -5,18 +5,7 @@
 
   export let form: ActionData
 
-  let name = ''
-  let email = ''
-  let message = ''
-
-  $: disabled = !name || !email || !email.includes('@') || message.length < 5
-
-  $: if (form?.response) {
-    name = ''
-    email = ''
-    message = ''
-    $isSubmittingForm = false
-  }
+  $: form?.response && ($isSubmittingForm = false)
 </script>
 
 <svelte:head>
@@ -32,28 +21,14 @@
   {#if form?.success}
     <pre>{JSON.stringify(form, null, 2)}</pre>
   {:else if form && !form?.success}
-    <p>The submission was not successful. Please try again.</p>
+    <p>The submission was not successful. Please try again. 💩</p>
+    <pre>{JSON.stringify(form, null, 2)}</pre>
   {:else}
     <form method="POST" use:enhance>
-      <input
-        name="name"
-        type="text"
-        placeholder="Enter your name..."
-        bind:value={name}
-      />
-      <input
-        name="email"
-        type="email"
-        placeholder="Enter your email..."
-        bind:value={email}
-      />
-      <textarea
-        rows="5"
-        name="message"
-        placeholder="Enter your message..."
-        bind:value={message}
-      />
-      <button on:click={() => ($isSubmittingForm = true)} {disabled}>
+      <input name="name" type="text" placeholder="Enter your name..." />
+      <input name="email" type="email" placeholder="Enter your email..." />
+      <textarea rows="5" name="message" placeholder="Enter your message..." />
+      <button on:click={() => ($isSubmittingForm = true)}>
         {#if $isSubmittingForm}
           Submitting Form. Please Wait...
         {:else}

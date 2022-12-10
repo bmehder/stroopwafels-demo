@@ -1,11 +1,13 @@
 <script>
   import { page } from '$app/stores'
-  import { pages } from '$lib/pages'
-  import { slides } from '$lib/slides'
-  import Loading from '$lib/Loading.svelte'
+  import { pages } from '$lib/models/pages'
+  import { slides } from '$lib/models/slides'
 
-  import 'stroopwafels/app.css'
+  import 'stroopwafels/base.css'
   import '$lib/theme.css'
+
+  import Loading from '$lib/components/Loading.svelte'
+
   import Header from 'stroopwafels/Header/Header.svelte'
   import Slider from 'stroopwafels/Slider/Slider.svelte'
   import BackToTop from 'stroopwafels/BackToTop.svelte'
@@ -16,12 +18,12 @@
 
 <div class="wrapper">
   <Header
+    items={pages}
+    logo={`<img src="/stroopwafel.png" alt="stroopwafel" /><div>Svelte Stroopwafels<br><small> Component Library</small></div>`}
     --width="1100px"
     --padding="2rem"
     --background="var(--white)"
     --color="var(--black)"
-    items={pages}
-    logo={`<img src="/stroopwafel.png" alt="stroopwafel" /><div>Svelte Stroopwafels<br><small> Component Library</small></div>`}
   />
 
   {#if $page.route.id === '/'}

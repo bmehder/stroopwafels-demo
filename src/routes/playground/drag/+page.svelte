@@ -1,6 +1,6 @@
 <script lang="ts">
   import { draggables } from './data'
-  import Draggable from '$lib/Draggable.svelte'
+  import Draggable from '$lib/components/Draggable.svelte'
 </script>
 
 <div class="section auto-format">

@@ -47,15 +47,19 @@ header i {
 .dark header {
   background-color: var(--black) !important;
 }
+
 .dark nav a, .dark nav svg, .dark i  {
   color: var(--white) !important;
 }
+
 .dark nav ul ul {
   background-color: var(--black) !important;
 }
+
 .dark .isOpen > ul > li {
   border-bottom: 1px solid var(--white) !important;
 }
+
 /* Slider */
 #slider article::after {
   content: '';
@@ -70,6 +74,28 @@ header i {
 #slider h2 {
   font-size: 8vw;
   z-index: 1;
+}
+
+/* Sidebar */
+main:has(.sidebar) {
+  padding-block-end: 0;
+}
+
+.sidebar {
+  gap: calc(var(--spacing) * 2);
+  align-items: start;
+}
+
+@media (min-width: 769px) {
+  main:has(.sidebar) {
+    padding-block-end: calc(var(--spacing) * 2);
+  }
+
+  .sidebar {
+    grid-template-columns: 2fr 1fr;
+    max-width: 1100px;
+    margin-inline: auto;
+  }
 }
 
 /* RFCs */

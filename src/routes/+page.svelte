@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { code } from '$lib/prismcode'
+  import { code } from '$lib/models/prismcode'
   import type { SvelteComponentTyped } from 'svelte'
 
   import { clickOutside } from 'stroopwafels/clickoutside'

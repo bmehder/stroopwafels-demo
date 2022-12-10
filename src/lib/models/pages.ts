@@ -36,10 +36,10 @@ export const pages = [
   },
   {
     name: 'Playground',
-    url: '/playground',
+    url: '#',
     children: [
-      { name: 'Draggables', url: '/drag' },
-      { name: 'Dialogue', url: '/dialogue' },
+      { name: 'Draggables', url: '/playground/drag' },
+      { name: 'Dialogue', url: '/playground/dialogue' },
     ],
   },
   {

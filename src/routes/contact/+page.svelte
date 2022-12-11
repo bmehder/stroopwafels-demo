@@ -6,9 +6,9 @@
 
   export let form: ActionData
 
-  let disabled = false
+  $: isSubmitted = !!form?.response
 
-  $: form?.response && (disabled = false)
+  $: isResponse = !!form?.response
 </script>
 
 <svelte:head>
@@ -19,14 +19,15 @@
   />
 </svelte:head>
 
-<section id="contact">
+<section>
   <h1>Contact</h1>
-  {#if form?.response}
+
+  {#if isResponse}
     <p>The form submitted successfully. 😀</p>
     <pre>{JSON.stringify(form, null, 2)}</pre>
   {:else}
-    <form method="POST" on:submit={() => (disabled = true)} use:enhance>
-      <div>
+    <form method="POST" on:submit={() => (isSubmitted = true)} use:enhance>
+      <div class="form-group">
         <label for="name">Name</label>
         <input
           name="name"
@@ -37,7 +38,7 @@
           aria-required="true"
         />
       </div>
-      <div>
+      <div class="form-group">
         <label for="email">Email</label>
         <input
           name="email"
@@ -47,7 +48,7 @@
           aria-required="true"
         />
       </div>
-      <div>
+      <div class="form-group">
         <label for="message">Message</label>
         <textarea
           name="message"
@@ -59,8 +60,8 @@
           aria-required="true"
         />
       </div>
-      <button {disabled}>
-        {#if disabled}
+      <button class="form-submit" disabled={isSubmitted}>
+        {#if isSubmitted}
           <p>The form is submitting...</p>
           <Spinner />
         {:else}
@@ -77,22 +78,24 @@
     --placeholder: 0.7;
     --max-width: 50%;
 
+    display: grid;
     gap: var(--spacing);
   }
 
-  form,
-  form div {
-    display: flex;
-    flex-direction: column;
+  @media (min-width: 769px) {
+    form {
+      max-width: var(--max-width);
+    }
   }
 
-  form div {
-    gap: var(--spacing-half);
+  .form-group {
+    display: grid;
+    gap: var(--half-spacing);
   }
 
   input,
   textarea {
-    padding: var(--spacing-half);
+    padding: var(--half-spacing);
   }
 
   input:valid,
@@ -105,30 +108,22 @@
     opacity: var(--placeholder);
   }
 
-  button {
+  .form-submit {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap: var(--spacing-half);
+    gap: var(--half-spacing);
   }
 
-  button:hover:not(:disabled) {
+  .form-submit:hover,
+  .form-submit:disabled {
     background-color: var(--dark);
   }
 
-  :disabled {
-    background-color: var(--dark);
-    border-radius: var(--radius);
+  .form-submit:disabled {
     font-weight: normal;
     text-transform: none;
+    border-radius: var(--radius);
     user-select: none;
     cursor: not-allowed;
-  }
-
-  @media (min-width: 769px) {
-    form {
-      max-width: var(--max-width);
-    }
   }
 </style>

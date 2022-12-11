@@ -9,7 +9,7 @@
     height: calc(var(--spacing) - 0.5rem);
   }
 
-  svg circle {
+  circle {
     stroke: var(--white);
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;

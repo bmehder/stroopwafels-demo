@@ -1,6 +1,6 @@
 :root {
   --white: white;
-  --spacing-half: calc(var(--spacing) / 2)
+  --half-spacing: calc(var(--spacing) / 2)
 }
 
 body {

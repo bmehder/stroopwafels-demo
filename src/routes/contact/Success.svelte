@@ -47,7 +47,6 @@
 
 <style>
   .auto-format .button {
-    text-align: center;
     width: max-content;
   }
 

@@ -4,6 +4,7 @@
   import { slides } from '$lib/models/slides'
 
   import 'stroopwafels/base.css'
+  import '$lib/stroopwafels-local.css'
   import '$lib/theme.css'
 
   import Loading from '$lib/components/Loading.svelte'
@@ -28,7 +29,7 @@
     --color="var(--black)"
   />
 
-  {#if $page.route.id === '/'}
+  {#if $page.route?.id === '/'}
     <div id="slider">
       <Slider {slides} isAutoplay={true} color="white" --height="70vh" />
     </div>

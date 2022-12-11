@@ -234,6 +234,10 @@
 <style>
   select {
     padding: calc(var(--spacing) / 2);
+    background-color: var(--light);
+    color: var(--white);
+    border: none;
+    /* outline: none; */
   }
   @media (min-width: 769px) {
     .section {

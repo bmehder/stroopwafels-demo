@@ -13,10 +13,6 @@ export const actions: Actions = {
       message: formData.get('message') ?? '',
     }
 
-    if (response.name && response.email && response.message) {
-      return { response, success: true }
-    } else {
-      return { response, success: false }
-    }
+    return { response }
   },
 }

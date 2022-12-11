@@ -1,13 +1,12 @@
 <script lang="ts">
   import { enhance } from '$app/forms'
   import type { ActionData } from './$types'
-  import { isSubmittingForm } from './store'
 
   export let form: ActionData
 
-  let formElement: HTMLFormElement | undefined
+  let disabled = false
 
-  $: form?.response && ($isSubmittingForm = false)
+  $: form?.response && (disabled = false)
 </script>
 
 <svelte:head>
@@ -20,18 +19,17 @@
 
 <section id="contact">
   <h1>Contact</h1>
-  {#if form?.success}
-    <pre>{JSON.stringify(form, null, 2)}</pre>
-  {:else if form && !form?.success}
-    <p>The submission was not successful. Please try again. 💩</p>
+  {#if form?.response}
+    <p>The form submitted successfully. 😀</p>
     <pre>{JSON.stringify(form, null, 2)}</pre>
   {:else}
-    <form bind:this={formElement} method="POST" use:enhance>
+    <form method="POST" on:submit={() => (disabled = true)} use:enhance>
       <div>
         <label for="name">Name</label>
         <input
           name="name"
           type="text"
+          maxlength="100"
           placeholder="John Doe"
           required
           aria-required="true"
@@ -52,17 +50,22 @@
         <textarea
           rows="5"
           name="message"
+          minlength="5"
+          maxlength="400"
           placeholder="Enter your message..."
           required
-          minlength="5"
           aria-required="true"
         />
       </div>
-      <button
-        on:click={() => formElement?.checkValidity() && ($isSubmittingForm = true)}
-      >
-        {#if $isSubmittingForm}
-          Submitting Form. Please Wait...
+      <button {disabled}>
+        {#if disabled}
+          <div>
+            <p>The form is submitting...</p>
+
+            <svg viewBox="0 0 50 50">
+              <circle cx="25" cy="25" r="20" fill="none" stroke-width="5" />
+            </svg>
+          </div>
         {:else}
           Submit Form
         {/if}
@@ -92,8 +95,67 @@
 
   input:valid,
   textarea:valid {
-    border: 2px solid hsl(143, 89%, 35%);
+    border: 1px solid hsl(143, 89%, 35%);
     outline: none;
+  }
+
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    opacity: 0.7;
+  }
+
+  button:hover:not(:disabled) {
+    background-color: hsl(23, 89%, 50%);
+    transition: all 200ms;
+    scale: 0.99;
+  }
+
+  :disabled {
+    background-color: transparent;
+    user-select: none;
+    cursor: not-allowed;
+  }
+
+  button div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing);
+    color: var(--black);
+  }
+
+  svg {
+    animation: rotate 2s linear infinite;
+    width: 50px;
+    height: 50px;
+  }
+
+  svg circle {
+    stroke: var(--dark);
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
   }
 
   @media (min-width: 769px) {

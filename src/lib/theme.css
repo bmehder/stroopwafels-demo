@@ -110,3 +110,7 @@ main:has(.sidebar) {
 textarea {
   font-family: inherit;
 }
+
+.full-bleed {
+  padding-block: calc(var(--spacing) * 2);
+}

@@ -36,7 +36,7 @@ export const pages = [
   },
   {
     name: 'Playground',
-    url: '#',
+    url: '/playground',
     children: [
       { name: 'Draggables', url: '/playground/drag' },
       { name: 'Dialogue', url: '/playground/dialogue' },

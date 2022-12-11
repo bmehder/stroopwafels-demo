@@ -1,5 +1,6 @@
 :root {
   --white: white;
+  --spacing-half: calc(var(--spacing) / 2)
 }
 
 body {
@@ -106,3 +107,6 @@ main:has(.sidebar) {
   Styles under consideration to be moved to the 
   the base stylesheet
 */
+textarea {
+  font-family: inherit;
+}

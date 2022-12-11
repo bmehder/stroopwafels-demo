@@ -1,6 +1,8 @@
 <script lang="ts">
-  import { enhance } from '$app/forms'
   import type { ActionData } from './$types'
+  import { enhance } from '$app/forms'
+
+  import Spinner from './Spinner.svelte'
 
   export let form: ActionData
 
@@ -48,8 +50,8 @@
       <div>
         <label for="message">Message</label>
         <textarea
-          rows="5"
           name="message"
+          rows="6"
           minlength="5"
           maxlength="400"
           placeholder="Enter your message..."
@@ -59,13 +61,8 @@
       </div>
       <button {disabled}>
         {#if disabled}
-          <div>
-            <p>The form is submitting...</p>
-
-            <svg viewBox="0 0 50 50">
-              <circle cx="25" cy="25" r="20" fill="none" stroke-width="5" />
-            </svg>
-          </div>
+          <p>The form is submitting...</p>
+          <Spinner />
         {:else}
           Submit Form
         {/if}
@@ -76,91 +73,62 @@
 
 <style>
   form {
-    display: flex;
-    flex-direction: column;
+    --valid: 1px solid hsl(143, 89%, 50%);
+    --placeholder: 0.7;
+    --max-width: 50%;
+
     gap: var(--spacing);
   }
+
+  form,
   form div {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
   }
+
+  form div {
+    gap: var(--spacing-half);
+  }
+
   input,
   textarea {
-    padding: calc(var(--spacing) / 2);
-  }
-  textarea {
-    font-family: inherit;
+    padding: var(--spacing-half);
   }
 
   input:valid,
   textarea:valid {
-    border: 1px solid hsl(143, 89%, 35%);
-    outline: none;
+    outline: var(--valid);
   }
 
   input::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
-    opacity: 0.7;
+    opacity: var(--placeholder);
   }
 
-  button:hover:not(:disabled) {
-    background-color: hsl(23, 89%, 50%);
-    transition: all 200ms;
-    scale: 0.99;
-  }
-
-  :disabled {
-    background-color: transparent;
-    user-select: none;
-    cursor: not-allowed;
-  }
-
-  button div {
+  button {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: var(--spacing);
-    color: var(--black);
+    gap: var(--spacing-half);
   }
 
-  svg {
-    animation: rotate 2s linear infinite;
-    width: 50px;
-    height: 50px;
+  button:hover:not(:disabled) {
+    background-color: var(--dark);
   }
 
-  svg circle {
-    stroke: var(--dark);
-    stroke-linecap: round;
-    animation: dash 1.5s ease-in-out infinite;
-  }
-
-  @keyframes rotate {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes dash {
-    0% {
-      stroke-dasharray: 1, 150;
-      stroke-dashoffset: 0;
-    }
-    50% {
-      stroke-dasharray: 90, 150;
-      stroke-dashoffset: -35;
-    }
-    100% {
-      stroke-dasharray: 90, 150;
-      stroke-dashoffset: -124;
-    }
+  :disabled {
+    background-color: var(--dark);
+    border-radius: var(--radius);
+    font-weight: normal;
+    text-transform: none;
+    user-select: none;
+    cursor: not-allowed;
   }
 
   @media (min-width: 769px) {
     form {
-      max-width: 50%;
+      max-width: var(--max-width);
     }
   }
 </style>
